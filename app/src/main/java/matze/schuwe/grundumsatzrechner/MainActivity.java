@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -17,15 +19,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
         if(db==null){
             db=new DatenBerechnung();
         }else{
             felderEinsetzen();
         }
+    }// Ende onCreate-Methode
 
-    }
+
+
+
     public void felderEinsetzen(){
         EditText gewicht =(EditText) findViewById(R.id.gewicht);
         EditText groesse =(EditText) findViewById(R.id.groesse);

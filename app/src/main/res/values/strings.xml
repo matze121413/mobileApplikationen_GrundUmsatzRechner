@@ -42,7 +42,7 @@
     <string name="titleSaved">Gespeicherte Werte</string>
 
     //Textdefinition für Hilfe-Seite
-    <string name="headingHelp">Hilfe:</string>
+    <string name="outlineHelp">Hilfe:</string>
     <string name="frageEeins">Was kann mit dieser App berechnet werden?</string>
     <string name="antwortEins"></string>
     <string name="frageZwei">Was bedeuten die jeweiligen Aktivitäten?</string>

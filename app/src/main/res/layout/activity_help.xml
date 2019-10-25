@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/headingHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:text="@string/outlineHelp" />
+
+    <ScrollView
+        android:id="@+id/scrollViewHelp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewHinweise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hinweise:"
+                android:paddingLeft="3dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/beschreibungHinweise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="Faktoren wie Stress, Klima, Hormone können die benötigte Energiezufuhr eines Körpers beeinflussen. Bei der Berechnung der Energiezufuhr werden diese Eigenschaften/Gegebenheitenleider  außen vor gelassen. Die App dient nur zur ungefähren Bestimmung der Energiezufuhr und ist somit eine grobe Orientierung! Bei einer geplanten Ernährungsumstellung ziehen Sie bitte ärztliche Unterstützung hinzu! Des Weiteren werden angegebene bzw. gespeicherte Daten NICHT an Dritte weitergegeben! " />
+
+            <TextView
+                android:id="@+id/textViewFrageEins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                tools:text="@string/frageEeins" />
+
+            <TextView
+                android:id="@+id/textViewAntwortEins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/antwortEins"
+                android:paddingLeft="3dp"
+                tools:text="Mit HIlfe  dieser App kann die Menge an Energie berechnet werden, die dem Körper in Form von Nahrung zugeführt werden muss, um den täglichen Energiebedarf zu decken. Die Berechnung der Energiezufuhr setzt sich aus dem Grundumsatz (= Menge an Energie, die ein Mensch innerhalb der 24h bei völlliger Ruhe im Durchschnitt mind. benötigt, um seineKörpertemepratur und den Grundstoffwechsel aufrecht zuerhalten) und dem Leistungsumsatz  (= die Energiemenge die ein Körper bei jeder weiteren Leistung die er verrichtet zuätzlich benötigt zum Grundumsatz benötigt)." />
+
+            <TextView
+                android:id="@+id/textViewFrageZwei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/frageZwei"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="3dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="3dp"
+                android:stretchColumns="1">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffSchlaf"
+                        android:layout_width="141dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginRight="3dp"
+                        android:paddingLeft="3dp"
+                        android:text="Schlaf:" />
+
+                    <TextView
+                        android:id="@+id/ErklaerungSchlaf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        android:text="völlige Ruhe des Körpers und Geist," />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                    android:id="@+id/begriffSitzendLiegend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBrightGrey"
+                    android:textColor="@color/colorBlack"
+                        android:layout_marginRight="3dp"
+                        android:paddingLeft="3dp"
+                    android:text="nur sitzdend/liegend" />
+
+                    <TextView
+                        android:id="@+id/erklaerungSitzendLiegend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBrightGrey"
+                        android:textColor="@color/colorBlack"
+                        tools:text="bettlägrige, gebrechliche Menschen" />
+
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/begriffSitzendKaumAktiv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginRight="3dp"
+                    android:paddingLeft="3dp"
+                    android:text="sitzdend/ kaum Aktiv:" />
+
+                    <TextView
+                        android:id="@+id/erklaerungSitzendKaumAktiv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        android:text="z.B  Büroangestellte, Feinmechaniker" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/begriffStehendGehend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBrightGrey"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginRight="3dp"
+                    android:paddingLeft="3dp"
+                    android:text="stehend/ gehend:" />
+                    />
+
+                    <TextView
+                        android:id="@+id/erklaerungStehendGehend"
+                        android:layout_width="245dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBrightGrey"
+                        android:textColor="@color/colorBlack"
+                        tools:text="z.B. Verkäufer, Kellner, Handwerker" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffAnstrengendSport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginRight="3dp"
+                        android:paddingLeft="3dp"
+                        android:text="anstrengende Arbeit/ \nSport:" />
+                    />
+
+                    <TextView
+                        android:id="@+id/erklaerungAnstrengendSport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        tools:text="z.B. Landwirte, Bauarbeiter, Leistungssportler" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textViewFrageDrei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:paddingLeft="3dp"
+                android:textStyle="bold"
+                tools:text="Warum ist das Geschlecht für die Berechnung relevant?" />
+
+            <TextView
+                android:id="@+id/textViewAntwortDrei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:paddingLeft="3dp"
+                tools:text="Bei der Berechnung wird zwischen den Geschlechtern unterschieden, da für einen weiblichen Körper in Abhängigkeit vom Alter, Gewicht und Größe andere Richtwerte zur Berechnung des Energiebedarfs gelten  als für einen männlichen Körper." />
+
+            <TextView
+                android:id="@+id/textViewFrageVier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="4dp"
+                tools:text="Was muss beim Ausfüllen der Eingabefelder beachtet werden?" />
+
+            <TextView
+                android:id="@+id/textViewAntwortVier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="Beim Ausfüllen der Eingabefelder muss zwingend darauf geachtet werden, dass alle Felder mit korrekten Daten ausgefüllt sind. Zudem müssen die jeweiligen eingegebenen Stunden für die jeweiligen Aktivitäten in der Summe 24 betragen, da die Berechnung auf einen Tag mit 24 Stunden basaiert. Ansonsten ist keine Berechnung der Energiezufuhr möglich. Im Falle, dass eine der Aktivitäten an einem Tag vom Körper nicht ausgeübt worden ist, ist der Wert '0' einzutragen. Die in grau hinterlegten Beispiele in den Eingabefeldern zeigen, wie eine mögliche Eingabe aussehen kann." />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
