@@ -18,14 +18,16 @@ public class DbHelper extends SQLiteOpenHelper{
         public static final String TABLE_KALORIENVERBRAUCH = "kalorienverbrauch_liste";
 
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_GRUNGUMSATZ = "grundumsatz";
+        public static final String COLUMN_GRUNDUMSATZ = "grundumsatz";
         public static final String COLUMN_KALORIENVERBRAUCH = "kalorienverbrauch";
+    public static final String COLUMN_TEST = "test";
 
         public static final String SQL_CREATE =
                 "CREATE TABLE " + TABLE_KALORIENVERBRAUCH +
                         "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        //COLUMN_TEST + " INTEGER NOT NULL, " +
                         COLUMN_KALORIENVERBRAUCH + " INTEGER NOT NULL, " +
-                        COLUMN_GRUNGUMSATZ + " INTEGER NOT NULL);";
+                        COLUMN_GRUNDUMSATZ + " INTEGER NOT NULL);";
 
 
         public DbHelper(Context context) {
@@ -51,9 +53,11 @@ public class DbHelper extends SQLiteOpenHelper{
         }
 
         public boolean addData(int kalorienVerbrauch, int grundUmsatz){
+            int test =1;
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues =  new ContentValues();
-            contentValues.put(COLUMN_GRUNGUMSATZ, grundUmsatz);
+            contentValues.put(COLUMN_GRUNDUMSATZ, grundUmsatz);
+           // contentValues.put(COLUMN_TEST, test);
             contentValues.put(COLUMN_KALORIENVERBRAUCH, kalorienVerbrauch);
             Log.d(TAG, "Daten hinzugefügt:"+ kalorienVerbrauch + "und "+ grundUmsatz +" zu" +TABLE_KALORIENVERBRAUCH );
             long result = db.insert(TABLE_KALORIENVERBRAUCH, null, contentValues);
