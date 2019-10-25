@@ -12,6 +12,7 @@
         <activity android:name=".ListeDatenbank"></activity>
         <activity android:name=".ErgebnisActivity" />
         <activity android:name=".AktivitaetActivity" />
+        <activity android:name=".HilfeActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

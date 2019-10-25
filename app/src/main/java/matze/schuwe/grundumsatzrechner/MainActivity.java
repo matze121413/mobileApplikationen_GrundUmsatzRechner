@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,15 +20,41 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+
+
+
         if(db==null){
             db=new DatenBerechnung();
         }else{
             felderEinsetzen();
         }
 
-    }
+    }// Ende onCreate-Methode
+
+
+    /* Menu-Icon wird in toolbar angezeigt */
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }//Ende der onCreateOptionMenu-Methode
+
+    //soll Activity wechseln, wenn ein Item im MEnu angeklickt wurde
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.help:
+                Intent helpIntent = new Intent(MainActivity.this,HilfeActivity.class);
+                startActivity(helpIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }//Ende switch
+    }//Ende onOptionsItemSelected
+
+
     public void felderEinsetzen(){
         EditText gewicht =(EditText) findViewById(R.id.gewicht);
         EditText groesse =(EditText) findViewById(R.id.groesse);

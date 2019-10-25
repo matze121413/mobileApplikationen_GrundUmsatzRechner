@@ -42,10 +42,24 @@
     <string name="titleSaved">Gespeicherte Werte</string>
 
     //Textdefinition für Hilfe-Seite
-    <string name="headingHelp">Hilfe:</string>
+    <string name="outlineHelp">Hilfe:</string>
+    <string name="outlineHInweise">Hinweise:</string>
+    <string name="beschreibungHInweise">Faktoren wie Stress, Klima, Hormone können die benötigte Energiezufuhr eines Körpers beeinflussen. Bei der Berechnung der Energiezufuhr werden diese Eigenschaften/Gegebenheitenleider  außen vor gelassen. Die App dient nur zur ungefähren Bestimmung der Energiezufuhr und ist somit eine grobe Orientierung! Bei einer geplanten Ernährungsumstellung ziehen Sie bitte ärztliche Unterstützung hinzu! Des Weiteren werden angegebene bzw. gespeicherte Daten NICHT an Dritte weitergegeben! </string>
     <string name="frageEeins">Was kann mit dieser App berechnet werden?</string>
-    <string name="antwortEins"></string>
+    <string name="antwortEins">Mit Hilfe  dieser App kann die Menge an Energie berechnet werden, die dem Körper in Form von Nahrung zugeführt werden muss, um den täglichen Energiebedarf zu decken. Die Berechnung der Energiezufuhr setzt sich aus dem Grundumsatz (= Menge an Energie, die ein Mensch innerhalb der 24h bei völlliger Ruhe im Durchschnitt mind. benötigt, um seineKörpertemepratur und den Grundstoffwechsel aufrecht zuerhalten) und dem Leistungsumsatz  (= die Energiemenge die ein Körper bei jeder weiteren Leistung die er verrichtet zuätzlich benötigt zum Grundumsatz benötigt).</string>
     <string name="frageZwei">Was bedeuten die jeweiligen Aktivitäten?</string>
-
-
+    <string name="termSleep">Schlaf:</string>
+    <string name="explainationTermSleep">völlige Ruhe des Körpers und Geist</string>
+    <string name="termJustSitting">nur sitzdend/liegend:</string>
+    <string name="explainationJustSitting">bettlägrige, gebrechliche Menschen</string>
+    <string name="termActive">sitzdend/ kaum Aktiv:</string>
+    <string name="explainationActive">z.B  Büroangestellte, Feinmechaniker</string>
+    <string name="termStay">stehend/ gehend:</string>
+    <string name="explainationStay">z.B. Verkäufer, Kellner, Handwerker</string>
+    <string name="termSport">anstrengende Arbeit/ \nSport:</string>
+    <string name="explainationSport">z.B. Landwirte, Bauarbeiter, \n Leistungssportler</string>
+    <string name="frageDrei">Warum ist das Geschlecht für die Berechnung relevant?</string>
+    <string name="antwortDrei">Bei der Berechnung wird zwischen den Geschlechtern unterschieden, da für einen weiblichen Körper in Abhängigkeit vom Alter, Gewicht und Größe andere Richtwerte zur Berechnung des Energiebedarfs gelten  als für einen männlichen Körper.</string>
+    <string name="frageVier">Was muss beim Ausfüllen der Eingabefelder beachtet werden?</string>
+    <string name="antwortVier">Beim Ausfüllen der Eingabefelder muss zwingend darauf geachtet werden, dass alle Felder mit korrekten Daten ausgefüllt sind. Zudem müssen die jeweiligen eingegebenen Stunden für die jeweiligen Aktivitäten in der Summe 24 betragen, da die Berechnung auf einen Tag mit 24 Stunden basaiert. Ansonsten ist keine Berechnung der Energiezufuhr möglich. Im Falle, dass eine der Aktivitäten an einem Tag vom Körper nicht ausgeübt worden ist, ist der Wert 0 einzutragen. Die in grau hinterlegten Beispiele in den Eingabefeldern zeigen, wie eine mögliche Eingabe aussehen kann.</string>
 </resources>
