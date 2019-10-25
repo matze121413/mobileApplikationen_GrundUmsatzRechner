@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="in Jahren"
+        android:text="@string/TextViewYears"
         app:layout_constraintStart_toEndOf="@+id/alter"
         app:layout_constraintTop_toBottomOf="@+id/text_groesse_masseinheit" />
 
@@ -24,6 +24,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:ems="10"
+        android:hint="z.B. 59.0"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
@@ -45,13 +46,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="männlich" />
+            android:text="@string/rbMaennlich" />
 
         <RadioButton
             android:id="@+id/radio_weiblich"
             android:layout_width="110dp"
             android:layout_height="match_parent"
-            android:text="weiblich" />
+            android:text="@string/rbWeiblich" />
     </RadioGroup>
 
     <EditText
@@ -60,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:ems="10"
+        android:hint="z.B. 160"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -74,7 +76,7 @@
         android:layout_marginLeft="280dp"
         android:layout_marginTop="99dp"
         android:onClick="berechnen"
-        android:text="weiter"
+        android:text="@string/btnWeiter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alter" />
 
@@ -86,6 +88,7 @@
         android:layout_marginLeft="64dp"
         android:layout_marginTop="68dp"
         android:ems="10"
+        android:hint="z.B. 20"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/text_alter"
         app:layout_constraintTop_toBottomOf="@+id/groesse" />
@@ -97,7 +100,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="40dp"
-        android:text="Geschlecht"
+        android:text="@string/gender"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,7 +111,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="60dp"
-        android:text="Gewicht"
+        android:text="@string/textViewGewicht"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_geschlecht" />
 
@@ -119,7 +122,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="88dp"
-        android:text="Grösse"
+        android:text="@string/textViewGroesse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_gewicht" />
 
@@ -130,7 +133,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="96dp"
-        android:text="Alter"
+        android:text="@string/textViewAlter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_groesse" />
 
@@ -141,7 +144,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="142dp"
-        android:text="in kg"
+        android:text="@string/textViewEinheitKg"
         app:layout_constraintStart_toEndOf="@+id/gewicht"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +155,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="88dp"
-        android:text="in cm"
+        android:text="@string/textViewEinheitCm"
         app:layout_constraintStart_toEndOf="@+id/groesse"
         app:layout_constraintTop_toBottomOf="@+id/text_gewicht_masseinheit" />
 
