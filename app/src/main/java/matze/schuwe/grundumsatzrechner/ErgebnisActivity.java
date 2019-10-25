@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ErgebnisActivity extends AppCompatActivity {
     public static DatenBerechnung db ;
+    DbHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,7 @@ public class ErgebnisActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         db = AktivitaetActivity.db;
+        dbHelper= new DbHelper(this);
         TextView grundUmsatzKcal = (TextView) findViewById(R.id.grundUmsatz_kcal);
         TextView grundUmsatzKj = (TextView) findViewById(R.id.grundUmsatz_kj);
         TextView kalorienVerbrauchKcal = (TextView) findViewById(R.id.kalorienVerbrauch_kcal);
@@ -31,6 +34,15 @@ public class ErgebnisActivity extends AppCompatActivity {
         MainActivity.db=null;
         AktivitaetActivity.db=null;
         Intent intent = new Intent(ErgebnisActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void speichern(View v){
+        boolean hinzugefuegt = dbHelper.addData((int)db.getKalorienVerbrauch(), (int) db.getGrundUmsatz());
+        if(hinzugefuegt){
+            Toast.makeText(this, "Daten erfolgreich hinzugefügt", Toast.LENGTH_LONG).show();
+        }else
+            Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
         startActivity(intent);
     }
     public boolean onOptionsItemSelected(MenuItem item){

@@ -1,10 +1,14 @@
 package matze.schuwe.grundumsatzrechner;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-    public class DbHelper extends SQLiteOpenHelper{
+import static android.content.ContentValues.TAG;
+
+public class DbHelper extends SQLiteOpenHelper{
 
         private static final String LOG_TAG = DbHelper.class.getSimpleName();
 
@@ -14,8 +18,8 @@ import android.util.Log;
         public static final String TABLE_KALORIENVERBRAUCH = "kalorienverbrauch_liste";
 
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_GRUNGUMSATZ = "product";
-        public static final String COLUMN_KALORIENVERBRAUCH = "quantity";
+        public static final String COLUMN_GRUNGUMSATZ = "grundumsatz";
+        public static final String COLUMN_KALORIENVERBRAUCH = "kalorienverbrauch";
 
         public static final String SQL_CREATE =
                 "CREATE TABLE " + TABLE_KALORIENVERBRAUCH +
@@ -42,7 +46,24 @@ import android.util.Log;
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_KALORIENVERBRAUCH);
+            onCreate(db);
+        }
 
+        public boolean addData(int kalorienVerbrauch, int grundUmsatz){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues =  new ContentValues();
+            contentValues.put(COLUMN_GRUNGUMSATZ, grundUmsatz);
+            contentValues.put(COLUMN_KALORIENVERBRAUCH, kalorienVerbrauch);
+            Log.d(TAG, "Daten hinzugefügt:"+ kalorienVerbrauch + "und "+ grundUmsatz +" zu" +TABLE_KALORIENVERBRAUCH );
+            long result = db.insert(TABLE_KALORIENVERBRAUCH, null, contentValues);
+            return result != -1;
+        }
+        public Cursor getData(){
+            SQLiteDatabase db= getWritableDatabase();
+            String query = "SELECT * FROM "+ TABLE_KALORIENVERBRAUCH;
+            Cursor data = db.rawQuery(query, null );
+            return data;
         }
     }
 

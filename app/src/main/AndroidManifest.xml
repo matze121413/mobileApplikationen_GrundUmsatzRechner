@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListeDatenbank"></activity>
         <activity android:name=".ErgebnisActivity" />
         <activity android:name=".AktivitaetActivity" />
         <activity android:name=".MainActivity">
