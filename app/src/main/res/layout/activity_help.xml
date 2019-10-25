@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/headingHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/outlineHelp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <ScrollView
+        android:id="@+id/scrollViewHelp"
+        android:layout_width="322dp"
+        android:layout_height="551dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47000003">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewHinweise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/outlineHInweise"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/beschreibungHinweise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/beschreibungHInweise" />
+
+            <TextView
+                android:id="@+id/textViewFrageEins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="3dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@string/frageEeins" />
+
+            <TextView
+                android:id="@+id/textViewAntwortEins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/antwortEins" />
+
+            <TextView
+                android:id="@+id/textViewFrageZwei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="3dp"
+                android:text="@string/frageZwei"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="3dp"
+                android:stretchColumns="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffSchlaf"
+                        android:layout_width="141dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="3dp"
+                        android:background="@color/colorGrey"
+                        android:paddingLeft="3dp"
+                        android:text="@string/termSleep"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/ErklaerungSchlaf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:text="@string/explainationTermSleep"
+                        android:textColor="@color/colorWhite" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffSitzendLiegend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:background="@color/colorBrightGrey"
+                        android:paddingLeft="3dp"
+                        android:text="@string/termJustSitting"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/erklaerungSitzendLiegend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBrightGrey"
+                        android:textColor="@color/colorBlack"
+                        tools:text="@string/explainationJustSitting" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffSitzendKaumAktiv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:background="@color/colorGrey"
+                        android:paddingLeft="3dp"
+                        android:text="@string/termActive"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/erklaerungSitzendKaumAktiv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGrey"
+                        android:text="@string/explainationActive"
+                        android:textColor="@color/colorWhite" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffStehendGehend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:background="@color/colorBrightGrey"
+                        android:paddingLeft="3dp"
+                        android:text="@string/termStay"
+                        android:textColor="@color/colorBlack" />
+                    />
+
+                    <TextView
+                        android:id="@+id/erklaerungStehendGehend"
+                        android:layout_width="245dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBrightGrey"
+                        android:textColor="@color/colorBlack"
+                        tools:text="@string/explainationStay" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/begriffAnstrengendSport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:background="@color/colorGrey"
+                        android:paddingLeft="3dp"
+                        android:text="@string/termSport"
+                        android:textColor="@color/colorWhite" />
+                    />
+
+                    <TextView
+                        android:id="@+id/erklaerungAnstrengendSport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGrey"
+                        android:textColor="@color/colorWhite"
+                        tools:text="@string/explainationSport" />
+
+                </TableRow>
+            </TableLayout>
+
+
+            <TextView
+                android:id="@+id/textViewFrageDrei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="3dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@string/frageDrei" />
+
+            <TextView
+                android:id="@+id/textViewAntwortDrei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="TextView"
+                tools:text="@string/antwortDrei" />
+
+            <TextView
+                android:id="@+id/textViewFrageVier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="3dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@string/frageVier" />
+
+            <TextView
+                android:id="@+id/textViewAntwortVier"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:paddingLeft="3dp"
+                android:text="@string/antwortVier" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
