@@ -3,14 +3,14 @@
     <string name="title_activity_test">TestActivity</string>
 
     //Textdefinitionen der "activity_main.xml"
-    <string name="gender">Geschlecht</string>
+    <string name="gender">Geschlecht:</string>
     <string name="TextViewYears">in Jahren</string>
     <string name="rbMaennlich">männlich</string>
     <string name="rbWeiblich">weiblich</string>
     <string name="btnWeiter">weiter</string>
-    <string name="textViewGewicht">Gewicht</string>
-    <string name="textViewGroesse">Grösse</string>
-    <string name="textViewAlter">Alter</string>
+    <string name="textViewGewicht">Gewicht:</string>
+    <string name="textViewGroesse">Grösse:</string>
+    <string name="textViewAlter">Alter:</string>
     <string name="textViewEinheitKg">in kg</string>
     <string name="textViewEinheitCm">in cm</string>
 
@@ -18,13 +18,13 @@
 
     <string name="heading">Aktivitäten in Stunden:</string>
     <string name="textViewSchlaf">Schlaf:</string>
-    <string name="textViewSitzendLiegend">nur sitzend/ liegend:</string>
-    <string name="textViewSitzendKaumAktiv">sitzend/ kaum Aktiv:</string>
-    <string name="textViewStehendGehend">stehend/ gehend:</string>
+    <string name="textViewSitzendLiegend">nur sitzend/\nliegend:</string>
+    <string name="textViewSitzendKaumAktiv">sitzend/\nkaum Aktiv:</string>
+    <string name="textViewStehendGehend">stehend/\ngehend:</string>
     <string name="textViewStundenInsg">Stunden insgesamt:</string>
     <string name="btnBerechnen">Berechnen</string>
     <string name="textViewSumStunden">0</string>
-    <string name="textViewAnstrengendeArbeitSport">anstrengende Arbeit/ \n Sport:</string>
+    <string name="textViewAnstrengendeArbeitSport">anstreng-\nende \nArbeit/Sport:</string>
 
     //Textdefinition der "activity_ergebnis.xml"
     <string name="textViewDurchschnittlKalorienverbrauch">Ihr durchschnittlicher Kalorienverbrauch beträgt:</string>
@@ -36,26 +36,28 @@
     <string name="btnNeuStart">Neu starten</string>
     <string name="btnSpeichern">speichern</string>
 
-    //Textdefinition für das App Menü
+    //Textdefinition für das toolbar_Menü
     <string name="symbol">Menu</string>
     <string name="titleHelp">Hilfe</string>
     <string name="titleSaved">Gespeicherte Werte</string>
 
+    //Textdefinitionen für das help_menu
+
     //Textdefinition für Hilfe-Seite
     <string name="outlineHelp">Hilfe:</string>
-    <string name="outlineHInweise">Hinweise:</string>
-    <string name="beschreibungHInweise">Faktoren wie Stress, Klima, Hormone können die benötigte Energiezufuhr eines Körpers beeinflussen. Bei der Berechnung der Energiezufuhr werden diese Eigenschaften/Gegebenheitenleider  außen vor gelassen. Die App dient nur zur ungefähren Bestimmung der Energiezufuhr und ist somit eine grobe Orientierung! Bei einer geplanten Ernährungsumstellung ziehen Sie bitte ärztliche Unterstützung hinzu! Des Weiteren werden angegebene bzw. gespeicherte Daten NICHT an Dritte weitergegeben! </string>
+    <string name="outlineHinweise">Hinweise:</string>
+    <string name="beschreibungHinweise">Faktoren wie Stress, Klima, Hormone können die benötigte Energiezufuhr eines Körpers beeinflussen. Bei der Berechnung der Energiezufuhr werden diese Eigenschaften/Gegebenheitenleider  außen vor gelassen. Die App dient nur zur ungefähren Bestimmung der Energiezufuhr und ist somit eine grobe Orientierung! Bei einer geplanten Ernährungsumstellung ziehen Sie bitte ärztliche Unterstützung hinzu! Des Weiteren werden angegebene bzw. gespeicherte Daten NICHT an Dritte weitergegeben! </string>
     <string name="frageEeins">Was kann mit dieser App berechnet werden?</string>
     <string name="antwortEins">Mit Hilfe  dieser App kann die Menge an Energie berechnet werden, die dem Körper in Form von Nahrung zugeführt werden muss, um den täglichen Energiebedarf zu decken. Die Berechnung der Energiezufuhr setzt sich aus dem Grundumsatz (= Menge an Energie, die ein Mensch innerhalb der 24h bei völlliger Ruhe im Durchschnitt mind. benötigt, um seineKörpertemepratur und den Grundstoffwechsel aufrecht zuerhalten) und dem Leistungsumsatz  (= die Energiemenge die ein Körper bei jeder weiteren Leistung die er verrichtet zuätzlich benötigt zum Grundumsatz benötigt).</string>
     <string name="frageZwei">Was bedeuten die jeweiligen Aktivitäten?</string>
     <string name="termSleep">Schlaf:</string>
-    <string name="explainationTermSleep">völlige Ruhe des Körpers und Geist</string>
+    <string name="explainationTermSleep">völlige Ruhe des \n Körpers und Geist</string>
     <string name="termJustSitting">nur sitzdend/liegend:</string>
-    <string name="explainationJustSitting">bettlägrige, gebrechliche Menschen</string>
-    <string name="termActive">sitzdend/ kaum Aktiv:</string>
-    <string name="explainationActive">z.B  Büroangestellte, Feinmechaniker</string>
+    <string name="explainationJustSitting">bettlägrige, gebrechliche \n Menschen</string>
+    <string name="termActive">sitzend/ kaum Aktiv:</string>
+    <string name="explainationActive">z.B  Büroangestellte, Fein-\n mechaniker</string>
     <string name="termStay">stehend/ gehend:</string>
-    <string name="explainationStay">z.B. Verkäufer, Kellner, Handwerker</string>
+    <string name="explainationStay">z.B. Verkäufer, Kellner,\n Handwerker</string>
     <string name="termSport">anstrengende Arbeit/ \nSport:</string>
     <string name="explainationSport">z.B. Landwirte, Bauarbeiter, \n Leistungssportler</string>
     <string name="frageDrei">Warum ist das Geschlecht für die Berechnung relevant?</string>

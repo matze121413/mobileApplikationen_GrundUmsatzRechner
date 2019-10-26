@@ -14,7 +14,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="3dp"
-                android:text="@string/outlineHInweise"
+                android:text="@string/outlineHinweise"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="3dp"
-                android:text="@string/beschreibungHInweise" />
+                android:text="@string/beschreibungHinweise" />
 
             <TextView
                 android:id="@+id/textViewFrageEins"
@@ -56,10 +56,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
                 android:paddingLeft="3dp"
-                android:text="TextView"
+                android:text="@string/frageEeins"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="@string/frageEeins" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewAntwortEins"
@@ -117,7 +116,7 @@
                     <TextView
                         android:id="@+id/begriffSitzendLiegend"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="3dp"
                         android:background="@color/colorBrightGrey"
                         android:paddingLeft="3dp"
@@ -130,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/colorBrightGrey"
                         android:textColor="@color/colorBlack"
-                        tools:text="@string/explainationJustSitting" />
+                        android:text="@string/explainationJustSitting" />
 
                 </TableRow>
 
@@ -143,7 +142,7 @@
                     <TextView
                         android:id="@+id/begriffSitzendKaumAktiv"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="3dp"
                         android:background="@color/colorGrey"
                         android:paddingLeft="3dp"
@@ -167,7 +166,7 @@
                     <TextView
                         android:id="@+id/begriffStehendGehend"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="3dp"
                         android:background="@color/colorBrightGrey"
                         android:paddingLeft="3dp"
@@ -181,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/colorBrightGrey"
                         android:textColor="@color/colorBlack"
-                        tools:text="@string/explainationStay" />
+                        android:text="@string/explainationStay" />
 
                 </TableRow>
 
@@ -207,7 +206,7 @@
                         android:layout_height="match_parent"
                         android:background="@color/colorGrey"
                         android:textColor="@color/colorWhite"
-                        tools:text="@string/explainationSport" />
+                        android:text="@string/explainationSport" />
 
                 </TableRow>
             </TableLayout>
@@ -219,18 +218,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:paddingLeft="3dp"
-                android:text="TextView"
+                android:text="@string/frageDrei"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="@string/frageDrei" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewAntwortDrei"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="3dp"
-                android:text="TextView"
-                tools:text="@string/antwortDrei" />
+                android:text="@string/antwortDrei"/>
 
             <TextView
                 android:id="@+id/textViewFrageVier"
@@ -238,10 +235,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:paddingLeft="3dp"
-                android:text="TextView"
+                android:text="@string/frageVier"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="@string/frageVier" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewAntwortVier"
