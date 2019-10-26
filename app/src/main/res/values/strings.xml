@@ -3,14 +3,14 @@
     <string name="title_activity_test">TestActivity</string>
 
     //Textdefinitionen der "activity_main.xml"
-    <string name="gender">Geschlecht</string>
+    <string name="gender">Geschlecht:</string>
     <string name="TextViewYears">in Jahren</string>
     <string name="rbMaennlich">männlich</string>
     <string name="rbWeiblich">weiblich</string>
     <string name="btnWeiter">weiter</string>
-    <string name="textViewGewicht">Gewicht</string>
-    <string name="textViewGroesse">Grösse</string>
-    <string name="textViewAlter">Alter</string>
+    <string name="textViewGewicht">Gewicht:</string>
+    <string name="textViewGroesse">Grösse:</string>
+    <string name="textViewAlter">Alter:</string>
     <string name="textViewEinheitKg">in kg</string>
     <string name="textViewEinheitCm">in cm</string>
 
@@ -18,13 +18,13 @@
 
     <string name="heading">Aktivitäten in Stunden:</string>
     <string name="textViewSchlaf">Schlaf:</string>
-    <string name="textViewSitzendLiegend">nur sitzend/ liegend:</string>
-    <string name="textViewSitzendKaumAktiv">sitzend/ kaum Aktiv:</string>
-    <string name="textViewStehendGehend">stehend/ gehend:</string>
+    <string name="textViewSitzendLiegend">nur sitzend/\nliegend:</string>
+    <string name="textViewSitzendKaumAktiv">sitzend/\nkaum Aktiv:</string>
+    <string name="textViewStehendGehend">stehend/\ngehend:</string>
     <string name="textViewStundenInsg">Stunden insgesamt:</string>
     <string name="btnBerechnen">Berechnen</string>
     <string name="textViewSumStunden">0</string>
-    <string name="textViewAnstrengendeArbeitSport">anstrengende Arbeit/ \n Sport:</string>
+    <string name="textViewAnstrengendeArbeitSport">anstreng-\nende \nArbeit/Sport:</string>
 
     //Textdefinition der "activity_ergebnis.xml"
     <string name="textViewDurchschnittlKalorienverbrauch">Ihr durchschnittlicher Kalorienverbrauch beträgt:</string>
@@ -36,10 +36,12 @@
     <string name="btnNeuStart">Neu starten</string>
     <string name="btnSpeichern">speichern</string>
 
-    //Textdefinition für das App Menü
+    //Textdefinition für das toolbar_Menü
     <string name="symbol">Menu</string>
     <string name="titleHelp">Hilfe</string>
     <string name="titleSaved">Gespeicherte Werte</string>
+
+    //Textdefinitionen für das help_menu
 
     //Textdefinition für Hilfe-Seite
     <string name="outlineHelp">Hilfe:</string>

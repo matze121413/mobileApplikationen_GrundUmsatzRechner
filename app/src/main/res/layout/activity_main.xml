@@ -44,9 +44,9 @@
                     android:checked="true"
                     android:textColor="@color/colorBlack"
                     android:text="@string/rbMaennlich"
-                    android:layout_marginRight="35dp"
+                    android:layout_marginRight="25dp"
                     android:textSize="18sp"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginLeft="11dp"/>
 
                 <RadioButton
                     android:id="@+id/radio_weiblich"
@@ -107,7 +107,7 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:gravity=""
+                android:gravity="center"
                 android:text="@string/textViewGroesse"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp"

@@ -17,15 +17,15 @@ public class HilfeActivity  extends AppCompatActivity {
     /* Menu-Icon wird in toolbar angezeigt */
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu, menu);
+        inflater.inflate(R.menu.helppage_menu, menu);
         return true;
     }//Ende der onCreateOptionMenu-Methode
 
     //soll Activity wechseln, wenn ein Item im MEnu angeklickt wurde
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case R.id.help:
-                Intent helpIntent = new Intent(HilfeActivity.this,HilfeActivity.class);
+            case R.id.berechnung:
+                Intent helpIntent = new Intent(HilfeActivity.this,MainActivity.class);
                 startActivity(helpIntent);
                 return true;
             default:
