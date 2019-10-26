@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -82,6 +84,7 @@ public class AktivitaetActivity extends AppCompatActivity {
         sport.addTextChangedListener(tw);
     }
 
+
     public void felderEinsetzen(){
         schlaf.setText(db.getPalSchlaf()+"");
         sitzend.setText(db.getPalSitzend()+"");
@@ -90,10 +93,21 @@ public class AktivitaetActivity extends AppCompatActivity {
         sport.setText(db.getPalSport()+"");
     }
 
+    /* Menu-Icon wird in toolbar angezeigt */
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }//Ende der onCreateOptionMenu-Methode
+
+    //soll Activity wechseln, wenn ein Item im MEnu angeklickt wurde
+
     public boolean onOptionsItemSelected(MenuItem item){
          int id = item.getItemId();
          if(id== android.R.id.home)
              startActivity(new Intent(this, MainActivity.class));
+         if(id== R.id.help)
+             startActivity(new Intent(this, HilfeActivity.class));
         return super.onOptionsItemSelected(item);
     }
     public void berechnen(View v){

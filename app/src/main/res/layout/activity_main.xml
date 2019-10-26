@@ -4,159 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backroundColor"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="@color/backroundColor"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="100dp">
 
-    <TextView
-        android:id="@+id/text_alter_masseinheit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="@string/TextViewYears"
-        app:layout_constraintStart_toEndOf="@+id/alter"
-        app:layout_constraintTop_toBottomOf="@+id/text_groesse_masseinheit" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/gewicht"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:ems="10"
-        android:hint="z.B. 59.0"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toEndOf="@+id/text_gewicht"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/text_geschlecht"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/gender"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <RadioGroup
-        android:layout_width="181dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="36dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/text_geschlecht"
-        app:layout_constraintTop_toTopOf="parent">
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/text_geschlecht">
 
-        <RadioButton
-            android:id="@+id/radio_maennlich"
-            android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radio_maennlich"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:textColor="@color/colorBlack"
+                    android:text="@string/rbMaennlich"
+                    android:layout_marginRight="35dp"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="15dp"/>
+
+                <RadioButton
+                    android:id="@+id/radio_weiblich"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/rbWeiblich"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/rbMaennlich" />
+            android:layout_marginTop="40dp">
 
-        <RadioButton
-            android:id="@+id/radio_weiblich"
-            android:layout_width="110dp"
-            android:layout_height="match_parent"
-            android:text="@string/rbWeiblich" />
-    </RadioGroup>
 
-    <EditText
-        android:id="@+id/groesse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:ems="10"
-        android:hint="z.B. 160"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@+id/text_groesse"
-        app:layout_constraintTop_toBottomOf="@+id/gewicht" />
+            <TextView
+                android:id="@+id/text_gewicht"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/textViewGewicht"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/gewicht"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="14dp"
+                android:ems="10"
+                android:hint="z.B. 59.0"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_gewicht_masseinheit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/textViewEinheitKg"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/text_groesse"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity=""
+                android:text="@string/textViewGroesse"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/groesse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="14dp"
+                android:ems="10"
+                android:hint="z.B. 160"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/text_groesse_masseinheit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+
+                android:text="@string/textViewEinheitCm"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/text_alter"
+                android:layout_width="76dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/textViewAlter"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/alter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:layout_marginLeft="14dp"
+                android:hint="z.B. 20"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:id="@+id/text_alter_masseinheit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/TextViewYears"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="99dp"
+        android:background="@color/colorPrimary"
         android:onClick="berechnen"
         android:text="@string/btnWeiter"
+        android:textColor="@color/colorWhite"
+
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alter" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
-    <EditText
-        android:id="@+id/alter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="68dp"
-        android:ems="10"
-        android:hint="z.B. 20"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/text_alter"
-        app:layout_constraintTop_toBottomOf="@+id/groesse" />
-
-    <TextView
-        android:id="@+id/text_geschlecht"
-        android:layout_width="89dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/gender"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_gewicht"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/textViewGewicht"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_geschlecht" />
-
-    <TextView
-        android:id="@+id/text_groesse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/textViewGroesse"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_gewicht" />
-
-    <TextView
-        android:id="@+id/text_alter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="96dp"
-        android:text="@string/textViewAlter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_groesse" />
-
-    <TextView
-        android:id="@+id/text_gewicht_masseinheit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="142dp"
-        android:text="@string/textViewEinheitKg"
-        app:layout_constraintStart_toEndOf="@+id/gewicht"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_groesse_masseinheit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/textViewEinheitCm"
-        app:layout_constraintStart_toEndOf="@+id/groesse"
-        app:layout_constraintTop_toBottomOf="@+id/text_gewicht_masseinheit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
