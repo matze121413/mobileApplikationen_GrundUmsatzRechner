@@ -36,14 +36,19 @@ public class ErgebnisActivity extends AppCompatActivity {
         Intent intent = new Intent(ErgebnisActivity.this, MainActivity.class);
         startActivity(intent);
     }
+    //int alter, int groesse, double gewicht, double schlaf, double sitzend, double stehend, double kaumAktiv, double sport, int geschlecht
     public void speichern(View v){
-        boolean hinzugefuegt = dbHelper.addData((int)db.getKalorienVerbrauch(), (int) db.getGrundUmsatz());
+        int ges= 0;
+        if(!db.getMaennlich())
+            ges=1;
+        boolean hinzugefuegt = dbHelper.addData("Hans", (int)db.getKalorienVerbrauch(), (int) db.getGrundUmsatz(), db.getAlter(), db.getGroesse(), db.getGewicht(), db.getPalSchlaf(), db.getPalSitzend(), db.getPalStehend(), db.getPalKaumAktiv(), db.getPalSport(), ges);
         if(hinzugefuegt){
             Toast.makeText(this, "Daten erfolgreich hinzugefügt", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
+            startActivity(intent);
         }else
             Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
-        startActivity(intent);
+
     }
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();

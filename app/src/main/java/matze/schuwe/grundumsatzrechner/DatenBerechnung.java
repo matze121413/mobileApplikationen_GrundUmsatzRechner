@@ -84,7 +84,6 @@ public class DatenBerechnung {
         palKaumAktiv=kaumAktiv;
     }
     public void berechneKalorienverbrauch() {
-
         palDurchschnitt = (palSchlaf*palFaktorSchlaf+palSitzend*palFaktorSitzend+ palKaumAktiv*palFaktorKaumAktiv+palStehend*palFaktorStehend+palSport*palFaktorSport)/24;
         kalorienVerbrauch= palDurchschnitt*grundUmsatz;
 

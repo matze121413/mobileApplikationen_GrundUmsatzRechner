@@ -19,13 +19,32 @@ public class DbHelper extends SQLiteOpenHelper{
 
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_GRUNDUMSATZ = "grundumsatz";
-        public static final String COLUMN_KALORIENVERBRAUCH = "kalorienverbrauch";
-    public static final String COLUMN_TEST = "test";
 
-        public static final String SQL_CREATE =
+        public static final String COLUMN_KALORIENVERBRAUCH = "kalorienverbrauch";
+        public static final String COLUMN_NAME = "name";
+        public static final String COLUMN_GEWICHT = "gewicht";
+        public static final String COLUMN_GROESSE = "groesse";
+        public static final String COLUMN_ALTER = "alterPerson";
+        public static final String COLUMN_SCHLAF = "schlaf";
+        public static final String COLUMN_SITZEND = "sitzend";
+        public static final String COLUMN_STEHEND = "stehend";
+        public static final String COLUMN_KAUMAKTIV = "kaumAktiv";
+        public static final String COLUMN_SPORT = "sport";
+     public static final String COLUMN_GESCHLECHT = "geschlecht";
+
+    public static final String SQL_CREATE =
                 "CREATE TABLE " + TABLE_KALORIENVERBRAUCH +
                         "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        //COLUMN_TEST + " INTEGER NOT NULL, " +
+                        COLUMN_NAME + " TEXT NOT NULL, " +
+                         COLUMN_GEWICHT +" REAL  NOT NULL, "+
+                        COLUMN_GROESSE +" INTEGER  NOT NULL, "+
+                        COLUMN_ALTER +" INTEGER  NOT NULL, "+
+                        COLUMN_GESCHLECHT +" INTEGER NOT NULL, "+
+                        COLUMN_SCHLAF +" REAL  NOT NULL, "+
+                        COLUMN_SITZEND +" REAL  NOT NULL, "+
+                        COLUMN_STEHEND +" REAL  NOT NULL, "+
+                        COLUMN_KAUMAKTIV +" REAL  NOT NULL, "+
+                        COLUMN_SPORT + " REAL NOT NULL, "+
                         COLUMN_KALORIENVERBRAUCH + " INTEGER NOT NULL, " +
                         COLUMN_GRUNDUMSATZ + " INTEGER NOT NULL);";
 
@@ -51,13 +70,20 @@ public class DbHelper extends SQLiteOpenHelper{
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_KALORIENVERBRAUCH);
             onCreate(db);
         }
-
-        public boolean addData(int kalorienVerbrauch, int grundUmsatz){
-            int test =1;
+        public boolean addData(String name, int kalorienVerbrauch, int grundUmsatz, int alter, int groesse, double gewicht, double schlaf, double sitzend, double stehend, double kaumAktiv, double sport, int geschlecht){
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues =  new ContentValues();
             contentValues.put(COLUMN_GRUNDUMSATZ, grundUmsatz);
-           // contentValues.put(COLUMN_TEST, test);
+            contentValues.put(COLUMN_GEWICHT, gewicht);
+             contentValues.put(COLUMN_GROESSE, groesse);
+            contentValues.put(COLUMN_ALTER, alter);
+             contentValues.put(COLUMN_SCHLAF, schlaf);
+            contentValues.put(COLUMN_SITZEND, sitzend);
+             contentValues.put(COLUMN_STEHEND, stehend);
+             contentValues.put(COLUMN_KAUMAKTIV, kaumAktiv);
+            contentValues.put(COLUMN_SPORT, sport);
+            contentValues.put(COLUMN_GESCHLECHT ,geschlecht);
+            contentValues.put(COLUMN_NAME ,name);
             contentValues.put(COLUMN_KALORIENVERBRAUCH, kalorienVerbrauch);
             Log.d(TAG, "Daten hinzugefügt:"+ kalorienVerbrauch + "und "+ grundUmsatz +" zu" +TABLE_KALORIENVERBRAUCH );
             long result = db.insert(TABLE_KALORIENVERBRAUCH, null, contentValues);
@@ -66,6 +92,12 @@ public class DbHelper extends SQLiteOpenHelper{
         public Cursor getData(){
             SQLiteDatabase db= getWritableDatabase();
             String query = "SELECT * FROM "+ TABLE_KALORIENVERBRAUCH;
+            Cursor data = db.rawQuery(query, null );
+            return data;
+        }
+        public Cursor getItemId(String name, int grundumsatz, int kalorienverbrauch){
+            SQLiteDatabase db= getWritableDatabase();
+            String query ="SELECT "+ COLUMN_ID + " FROM "+ TABLE_KALORIENVERBRAUCH+ " WHERE "+ COLUMN_GRUNDUMSATZ+ " = "+ grundumsatz + " AND "+ COLUMN_NAME+ " = '"+ name + "' AND "+ COLUMN_KALORIENVERBRAUCH+ " = "+ kalorienverbrauch;
             Cursor data = db.rawQuery(query, null );
             return data;
         }

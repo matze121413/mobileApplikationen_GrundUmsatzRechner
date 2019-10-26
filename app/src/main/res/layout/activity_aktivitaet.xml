@@ -55,8 +55,9 @@
     <ScrollView
         android:id="@+id/scrollViewAktivitaet"
         android:layout_width="285dp"
-        android:layout_height="289dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

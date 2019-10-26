@@ -110,6 +110,7 @@ public class AktivitaetActivity extends AppCompatActivity {
              startActivity(new Intent(this, HilfeActivity.class));
         return super.onOptionsItemSelected(item);
     }
+    //Noch zu tun: prüfen ob String(s) == null, falls ja nicht in Double casten und Fehler ausgeben -> sonst stürzt App ab
     public void berechnen(View v){
         double schlafendWert = Double.parseDouble(schlaf.getText().toString());
         double sitzendWert = Double.parseDouble(sitzend.getText().toString());
