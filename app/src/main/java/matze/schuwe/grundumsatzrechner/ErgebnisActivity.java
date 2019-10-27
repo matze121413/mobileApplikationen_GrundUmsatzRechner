@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -50,10 +52,23 @@ public class ErgebnisActivity extends AppCompatActivity {
             Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
 
     }
+
+    /* Menu-Icon wird in toolbar angezeigt */
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }//Ende der onCreateOptionMenu-Methode
+
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if(id== android.R.id.home)
             startActivity(new Intent(this, AktivitaetActivity.class));
+        if(id== R.id.help)
+            startActivity(new Intent(this, HilfeActivity.class));
+        if(id== R.id.daten){
+        Intent dateIntent = new Intent(ErgebnisActivity.this,ListeDatenbank.class);
+        startActivity(dateIntent);}
         return super.onOptionsItemSelected(item);
     }
 }

@@ -12,10 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:text="@string/textViewDurchschnittlKalorienverbrauch"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/grundUmsatz_kj" />
@@ -26,13 +28,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="187dp"
         android:layout_marginLeft="187dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="187dp"
         android:layout_marginRight="187dp"
+        android:background="@color/textViewBackround"
         android:text="@string/textViewErgebnisDurchschnitt"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_kalorienVerbrauch" />
+        app:layout_constraintTop_toBottomOf="@+id/text_kalorienVerbrauch"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text_Grundumsatz"
@@ -44,23 +51,28 @@
         android:layout_marginEnd="150dp"
         android:layout_marginRight="150dp"
         android:text="@string/textViewGrundumsatz"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999" />
 
     <TextView
         android:id="@+id/grundUmsatz_kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginRight="150dp"
         android:text="@string/textViewErgebnisGrundumsatzKcal"
+        android:textSize="18sp"
+        android:background="@color/textViewBackround"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Grundumsatz" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Grundumsatz"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/grundUmsatz_kj"
@@ -72,9 +84,14 @@
         android:layout_marginEnd="195dp"
         android:layout_marginRight="195dp"
         android:text="@string/textViewErgebnisGrundumsatzKj"
+        android:background="@color/textViewBackround"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grundUmsatz_kcal" />
+        app:layout_constraintTop_toBottomOf="@+id/grundUmsatz_kcal"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/kalorienVerbrauch_kj"
@@ -82,10 +99,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="195dp"
         android:layout_marginLeft="195dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="195dp"
         android:layout_marginRight="195dp"
+        android:background="@color/textViewBackround"
         android:text="0 kj"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kalorienVerbrauch_kcal" />
@@ -94,11 +115,15 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginBottom="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorPrimary"
         android:onClick="neuStarten"
         android:text="@string/btnNeuStart"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -106,11 +131,15 @@
         android:id="@+id/buttonSpeichern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorPrimary"
         android:onClick="speichern"
         android:text="@string/btnSpeichern"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

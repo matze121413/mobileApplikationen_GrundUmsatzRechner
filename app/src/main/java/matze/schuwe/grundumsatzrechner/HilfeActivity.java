@@ -28,6 +28,9 @@ public class HilfeActivity  extends AppCompatActivity {
                 Intent helpIntent = new Intent(HilfeActivity.this,MainActivity.class);
                 startActivity(helpIntent);
                 return true;
+            case R.id.datenHelp:
+                Intent datenIntent = new Intent(HilfeActivity.this,ListeDatenbank.class);
+                startActivity(datenIntent);
             default:
                 return super.onOptionsItemSelected(item);
         }//Ende switch

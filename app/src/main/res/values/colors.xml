@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8A0886</color>
-    <color name="colorPrimaryDark">#8A0886</color>
+    <color name="colorPrimary">#29088A</color>
+    <color name="colorPrimaryDark">#29088A</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrey">#848484</color>
     <color name="colorBrightGrey">#D8D8D8</color>
     <color name="colorBlack">#000000</color>
-    <color name="backroundColor">#FBEFFB</color>
+    <color name="backroundColor">#FFFFFF</color>
     <color name="iconColor">#D358F7</color>
     <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="textViewBackround">#CEECF5</color>
 
 </resources>
 

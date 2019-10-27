@@ -100,14 +100,15 @@ public class AktivitaetActivity extends AppCompatActivity {
         return true;
     }//Ende der onCreateOptionMenu-Methode
 
-    //soll Activity wechseln, wenn ein Item im MEnu angeklickt wurde
-
+    //soll Activity wechseln, wenn ein Item in der toolbar angeklickt wurde
     public boolean onOptionsItemSelected(MenuItem item){
          int id = item.getItemId();
          if(id== android.R.id.home)
              startActivity(new Intent(this, MainActivity.class));
          if(id== R.id.help)
              startActivity(new Intent(this, HilfeActivity.class));
+        if(id== R.id.daten)
+            startActivity(new Intent(this, ListeDatenbank.class));
         return super.onOptionsItemSelected(item);
     }
     //Noch zu tun: prüfen ob String(s) == null, falls ja nicht in Double casten und Fehler ausgeben -> sonst stürzt App ab

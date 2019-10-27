@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent helpIntent = new Intent(MainActivity.this,HilfeActivity.class);
                 startActivity(helpIntent);
                 return true;
+            case R.id.daten:
+                Intent datenIntent = new Intent(MainActivity.this,ListeDatenbank.class);
+                startActivity(datenIntent);
             default:
                 return super.onOptionsItemSelected(item);
         }//Ende switch
