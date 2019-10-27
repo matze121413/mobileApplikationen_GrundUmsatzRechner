@@ -107,5 +107,11 @@ public class DbHelper extends SQLiteOpenHelper{
             Cursor data = db.rawQuery(query, null );
             return data;
         }
+        public void deleteRow(int id){
+            SQLiteDatabase db= getWritableDatabase();
+            String query = "DELETE FROM "+ TABLE_KALORIENVERBRAUCH +" WHERE "+ COLUMN_ID + " = "+ id+";";
+            Log.d(TAG, "Zeile mit ID = "+ id+" aus " +TABLE_KALORIENVERBRAUCH + " gelöscht");
+            db.execSQL(query);
+        }
     }
 

@@ -6,6 +6,7 @@ import android.widget.Toast;
 public class DatenBerechnung {
     private boolean maennlich;
     private  int groesse, alter;
+    private String name;
     private double gewicht, grundUmsatz, kalorienVerbrauch, palSchlaf, palSitzend, palStehend, palKaumAktiv, palSport, palDurchschnitt;
     private final double palFaktorSchlaf= 0.95;
     private final double palFaktorKaumAktiv= 1.45;
@@ -46,6 +47,9 @@ public class DatenBerechnung {
     public double getPalSport(){
         return palSport;
     }
+    public String getName(){
+        return name;
+    }
     public void setGroesse(int gr) throws WertebereichException{
         if(gr<100 || gr>300){
             throw new WertebereichException();
@@ -57,6 +61,11 @@ public class DatenBerechnung {
             throw new WertebereichException();
         }
         alter = alt;
+    }
+    public void setName(String n) throws  WertebereichException{
+        if(n.equals(""))
+            throw new WertebereichException();
+        name=n;
     }
     public void setGewicht(double gew) throws WertebereichException{
         if(gew<30 || gew>300){
