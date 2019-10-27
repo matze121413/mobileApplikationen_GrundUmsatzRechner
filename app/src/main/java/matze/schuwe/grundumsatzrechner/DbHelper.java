@@ -101,5 +101,11 @@ public class DbHelper extends SQLiteOpenHelper{
             Cursor data = db.rawQuery(query, null );
             return data;
         }
+        public Cursor getRow(int id){
+            SQLiteDatabase db= getWritableDatabase();
+            String query ="SELECT * FROM "+ TABLE_KALORIENVERBRAUCH+ " WHERE "+ COLUMN_ID + " = "+ id;
+            Cursor data = db.rawQuery(query, null );
+            return data;
+        }
     }
 

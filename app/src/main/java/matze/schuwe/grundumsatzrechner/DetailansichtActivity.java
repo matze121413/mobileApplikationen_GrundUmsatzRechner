@@ -9,9 +9,15 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class DetailansichtActivity extends AppCompatActivity {
     DbHelper dbHelper;
     TextView nameFeld, grundumsatzFeld;
+    private String  name;
+    private int  grundumsatz, kalorienverbrauch, alter, geschlecht;
+    private double gewicht, grundUmsatz, kalorienVerbrauch, schlaf, sitzend, stehend, kaumAktiv, sport;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +26,14 @@ public class DetailansichtActivity extends AppCompatActivity {
         Bundle b = intent.getExtras();
         int id = b.getInt("id");
         dbHelper = new DbHelper(this);
+        Cursor data =dbHelper.getRow(id);
+        while(data.moveToNext()) {
+            name = data.getString(1);
+            grundumsatz = Integer.parseInt(data.getString(12));
+        }
+        felderFuellen();
+
+
         /*Cursor data = dbHelper.getItemId(name, grundumsatz, kalorienverbrauch);
         int itemID = -1;
         while(data.moveToNext()){
@@ -32,5 +46,11 @@ public class DetailansichtActivity extends AppCompatActivity {
         grundumsatzFeld= (TextView) findViewById(R.id.db_erg_grundumsatz);
         nameFeld.setText(name);
         grundumsatzFeld.setText(grundumsatz+"");*/
+    }
+    public void felderFuellen(){
+        nameFeld = (TextView) findViewById(R.id.db_erg_name);
+        grundumsatzFeld = (TextView) findViewById(R.id.db_erg_grundumsatz);
+        nameFeld.setText(name);
+        grundumsatzFeld.setText(grundumsatz+"");
     }
 }
