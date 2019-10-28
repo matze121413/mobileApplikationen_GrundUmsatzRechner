@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 public class DetailansichtActivity extends AppCompatActivity {
     DbHelper dbHelper;
-    TextView nameFeld, grundumsatzFeld;
+    TextView nameFeld, grundumsatzFeld, groesseFeld, geschlechtFeld, gewichtFeld, alterFeld, schlafFeld, sitzenFeld, kaumAktivFeld, sportFeld;
     private String  name;
     private int  grundumsatz, kalorienverbrauch, alter, geschlecht, id, groesse;
     private double gewicht,  schlaf, sitzend, stehend, kaumAktiv, sport;
@@ -62,9 +63,30 @@ public class DetailansichtActivity extends AppCompatActivity {
     }
     public void felderFuellen(){
         nameFeld = (TextView) findViewById(R.id.db_erg_name);
-        grundumsatzFeld = (TextView) findViewById(R.id.db_erg_grundumsatz);
         nameFeld.setText(name);
+        grundumsatzFeld = (TextView) findViewById(R.id.db_erg_grundumsatz);
         grundumsatzFeld.setText(grundumsatz+"");
+        groesseFeld = (TextView) findViewById(R.id.db_erg_groesse);
+        groesseFeld.setText(groesse+"");
+        geschlechtFeld = (TextView) findViewById(R.id.db_erg_geschlecht);
+        if(geschlecht==0){
+            geschlechtFeld.setText("männlich");
+        }else{
+            geschlechtFeld.setText("weiblich");
+        }
+        gewichtFeld = (TextView) findViewById(R.id.db_erg_gewicht);
+        gewichtFeld.setText(gewicht+"");
+        alterFeld = (TextView) findViewById(R.id.db_erg_alter);
+        alterFeld.setText(alter+"");
+        schlafFeld = (TextView) findViewById(R.id.db_erg_schlaf);
+        schlafFeld.setText(schlaf+"");
+        sitzenFeld = (TextView) findViewById(R.id.db_erg_sitzend);
+        sitzenFeld.setText(sitzend+"");
+        kaumAktivFeld = (TextView) findViewById(R.id.db_erg_kaumAktiv);
+        kaumAktivFeld.setText(kaumAktiv+"");
+        sportFeld = (TextView) findViewById(R.id.db_erg_sport);
+        sportFeld.setText(sport+"");
+
     }
     public void datensatzLoeschen(View v){
         dbHelper.deleteRow(id);
