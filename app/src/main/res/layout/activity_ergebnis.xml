@@ -12,13 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:text="@string/textViewDurchschnittlKalorienverbrauch"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/grundUmsatz_kj" />
 
@@ -55,24 +56,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/grundUmsatz_kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textViewErgebnisGrundumsatzKcal"
-        android:textSize="18sp"
         android:background="@color/textViewBackround"
+        android:text="@string/textViewErgebnisGrundumsatzKcal"
         android:textColor="@color/colorBlack"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Grundumsatz"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.050000012" />
 
     <TextView
         android:id="@+id/grundUmsatz_kj"
@@ -83,8 +85,8 @@
         android:layout_marginTop="66dp"
         android:layout_marginEnd="195dp"
         android:layout_marginRight="195dp"
-        android:text="@string/textViewErgebnisGrundumsatzKj"
         android:background="@color/textViewBackround"
+        android:text="@string/textViewErgebnisGrundumsatzKj"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,6 +112,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kalorienVerbrauch_kcal" />
+
+
+    <EditText
+        android:id="@+id/editTextEingabeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Bitte Name eingeben"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
 
     <Button
         android:id="@+id/button2"
