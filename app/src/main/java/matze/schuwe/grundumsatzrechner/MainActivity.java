@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
            // Intent intent= new Intent(this, AktivitaetActivity.class);
             startActivity(new Intent(this, AktivitaetActivity.class));
         }catch (NumberFormatException nfe){
-            Toast.makeText(this, "Bitte nur Zahlen eingeben!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,  getString(R.string.nurZahlen), Toast.LENGTH_LONG).show();
         }catch(WertebereichException wbe){
-            Toast.makeText(this, "Die eingegebenen Werte liegen außerhalb des Wertebereiches!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.Wertebereich), Toast.LENGTH_LONG).show();
         }
 
 

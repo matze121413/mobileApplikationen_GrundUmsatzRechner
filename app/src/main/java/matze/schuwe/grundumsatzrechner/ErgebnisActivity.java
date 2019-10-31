@@ -46,17 +46,17 @@ public class ErgebnisActivity extends AppCompatActivity {
         int ges = 0;
         String name = eingabeFeld.getText().toString();
         if (name.equals("")) {
-            Toast.makeText(this, "Geben Sie bitte Ihren Namen ein!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.nameEingeben), Toast.LENGTH_LONG).show();
         } else {
             if (!db.getMaennlich())
                 ges = 1;
             boolean hinzugefuegt = dbHelper.addData(name, (int) db.getKalorienVerbrauch(), (int) db.getGrundUmsatz(), db.getAlter(), db.getGroesse(), db.getGewicht(), db.getPalSchlaf(), db.getPalSitzend(), db.getPalStehend(), db.getPalKaumAktiv(), db.getPalSport(), ges);
             if (hinzugefuegt) {
-                Toast.makeText(this, "Daten erfolgreich hinzugefügt", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.datenHinzugefuegt), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
                 startActivity(intent);
             } else
-                Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.datenNichtHinzugefuegt), Toast.LENGTH_LONG).show();
         }
         }
 
