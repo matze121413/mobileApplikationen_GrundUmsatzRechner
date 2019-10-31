@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -29,6 +32,8 @@ public class ListeDatenbank extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_liste_datenbank);
         tabelle = (TableView<String[]>) findViewById(R.id.tabelleDatensaetze);
         dbHelper = new DbHelper(this);
@@ -52,6 +57,21 @@ public class ListeDatenbank extends AppCompatActivity {
 
             }
         });
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }//Ende der onCreateOptionMenu-Methode
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id== android.R.id.home)
+            startActivity(new Intent(this, ListeDatenbank.class));
+        if(id== R.id.help)
+            startActivity(new Intent(this, HilfeActivity.class));
+        if(id== R.id.daten)
+            startActivity(new Intent(this, ListeDatenbank.class));
+        return super.onOptionsItemSelected(item);
     }
     public void listeFuellen(){
         String[] spalten ={"Name", "Grundumsatz", "Kalorienverbrauch"};

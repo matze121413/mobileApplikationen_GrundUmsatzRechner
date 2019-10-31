@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,8 @@ public class DetailansichtActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailansicht);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
          id = b.getInt("id");
@@ -59,6 +64,22 @@ public class DetailansichtActivity extends AppCompatActivity {
         grundumsatzFeld= (TextView) findViewById(R.id.db_erg_grundumsatz);
         nameFeld.setText(name);
         grundumsatzFeld.setText(grundumsatz+"");*/
+    }
+    /* Menu-Icon wird in toolbar angezeigt */
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }//Ende der onCreateOptionMenu-Methode
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id== android.R.id.home)
+            startActivity(new Intent(this, ListeDatenbank.class));
+        if(id== R.id.help)
+            startActivity(new Intent(this, HilfeActivity.class));
+        if(id== R.id.daten)
+            startActivity(new Intent(this, ListeDatenbank.class));
+        return super.onOptionsItemSelected(item);
     }
     public void felderFuellen(){
         nameFeld = (TextView) findViewById(R.id.db_erg_name);

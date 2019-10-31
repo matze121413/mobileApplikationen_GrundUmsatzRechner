@@ -111,21 +111,22 @@ public class AktivitaetActivity extends AppCompatActivity {
             startActivity(new Intent(this, ListeDatenbank.class));
         return super.onOptionsItemSelected(item);
     }
-    //Noch zu tun: prüfen ob String(s) == null, falls ja nicht in Double casten und Fehler ausgeben -> sonst stürzt App ab
-    public void berechnen(View v){
-        double schlafendWert = Double.parseDouble(schlaf.getText().toString());
-        double sitzendWert = Double.parseDouble(sitzend.getText().toString());
-        double kaumAktivWert = Double.parseDouble(kaumAktiv.getText().toString());
-        double stehendWert = Double.parseDouble(stehend.getText().toString());
-        double sportWert = Double.parseDouble(sport.getText().toString());
+        public void berechnen(View v){
         try {
+            double schlafendWert = Double.parseDouble(schlaf.getText().toString());
+            double sitzendWert = Double.parseDouble(sitzend.getText().toString());
+            double kaumAktivWert = Double.parseDouble(kaumAktiv.getText().toString());
+            double stehendWert = Double.parseDouble(stehend.getText().toString());
+            double sportWert = Double.parseDouble(sport.getText().toString());
             db.setPalWerte(schlafendWert, sitzendWert, kaumAktivWert, stehendWert, sportWert);
             db.berechneKalorienverbrauch();
             startActivity(new Intent(this, ErgebnisActivity.class));
-           // Toast.makeText(this, ""+db.getKalorienVerbrauch(), Toast.LENGTH_LONG).show();
+        }catch(NumberFormatException nfe){
+            Toast.makeText(this, "Alle Felder müssen mit Zahlen belegt werden!", Toast.LENGTH_LONG).show();
         }catch(WertebereichException wbe){
             Toast.makeText(this, "Alle Werte zusammen müssen 24h ergeben!", Toast.LENGTH_LONG).show();
         }
+
     }
 
 }
