@@ -5,20 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class DetailansichtActivity extends AppCompatActivity {
     DbHelper dbHelper;
-    TextView nameFeld, grundumsatzFeld, groesseFeld, geschlechtFeld, gewichtFeld, alterFeld, schlafFeld, sitzenFeld, kaumAktivFeld, sportFeld;
+    TextView nameFeld, grundumsatzFeld,kalorienverbrauchFeld, groesseFeld, geschlechtFeld, gewichtFeld, alterFeld, schlafFeld, sitzenFeld, kaumAktivFeld,stehendFeld, sportFeld;
     private String  name;
     private int  grundumsatz, kalorienverbrauch, alter, geschlecht, id, groesse;
     private double gewicht,  schlaf, sitzend, stehend, kaumAktiv, sport;
@@ -47,25 +43,10 @@ public class DetailansichtActivity extends AppCompatActivity {
             stehend = Double.parseDouble(data.getString(8));
             kaumAktiv = Double.parseDouble(data.getString(9));
             sport = Double.parseDouble(data.getString(10));
-
-
         }
         felderFuellen();
-
-
-        /*Cursor data = dbHelper.getItemId(name, grundumsatz, kalorienverbrauch);
-        int itemID = -1;
-        while(data.moveToNext()){
-            itemID = data.getInt(0);
-        }
-        if(itemID<-1){
-            Toast.makeText(this, "Keine ID mit diesen Paramentern", Toast.LENGTH_LONG).show();
-        }
-        nameFeld= (TextView) findViewById(R.id.db_erg_name);
-        grundumsatzFeld= (TextView) findViewById(R.id.db_erg_grundumsatz);
-        nameFeld.setText(name);
-        grundumsatzFeld.setText(grundumsatz+"");*/
     }
+
     /* Menu-Icon wird in toolbar angezeigt */
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -105,8 +86,12 @@ public class DetailansichtActivity extends AppCompatActivity {
         sitzenFeld.setText(sitzend+"");
         kaumAktivFeld = (TextView) findViewById(R.id.db_erg_kaumAktiv);
         kaumAktivFeld.setText(kaumAktiv+"");
+        stehendFeld = (TextView) findViewById(R.id.db_erg_stehend);
+        stehendFeld.setText(stehend+"");
         sportFeld = (TextView) findViewById(R.id.db_erg_sport);
         sportFeld.setText(sport+"");
+        kalorienverbrauchFeld = (TextView) findViewById(R.id.db_erg_kalorienverbrauch);
+        kalorienverbrauchFeld.setText(kalorienverbrauch+"");
 
     }
     public void datensatzLoeschen(View v){

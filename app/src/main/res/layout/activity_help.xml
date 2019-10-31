@@ -21,8 +21,13 @@
 
     <ScrollView
         android:id="@+id/scrollViewHelp"
-        android:layout_width="322dp"
-        android:layout_height="551dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,8 +133,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/colorBrightGrey"
-                        android:textColor="@color/colorBlack"
-                        android:text="@string/explainationJustSitting" />
+                        android:text="@string/explainationJustSitting"
+                        android:textColor="@color/colorBlack" />
 
                 </TableRow>
 
@@ -179,8 +184,8 @@
                         android:layout_width="245dp"
                         android:layout_height="wrap_content"
                         android:background="@color/colorBrightGrey"
-                        android:textColor="@color/colorBlack"
-                        android:text="@string/explainationStay" />
+                        android:text="@string/explainationStay"
+                        android:textColor="@color/colorBlack" />
 
                 </TableRow>
 
@@ -205,8 +210,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@color/colorGrey"
-                        android:textColor="@color/colorWhite"
-                        android:text="@string/explainationSport" />
+                        android:text="@string/explainationSport"
+                        android:textColor="@color/colorWhite" />
 
                 </TableRow>
             </TableLayout>
@@ -220,14 +225,14 @@
                 android:paddingLeft="3dp"
                 android:text="@string/frageDrei"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewAntwortDrei"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="3dp"
-                android:text="@string/antwortDrei"/>
+                android:text="@string/antwortDrei" />
 
             <TextView
                 android:id="@+id/textViewFrageVier"
@@ -237,7 +242,7 @@
                 android:paddingLeft="3dp"
                 android:text="@string/frageVier"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewAntwortVier"
