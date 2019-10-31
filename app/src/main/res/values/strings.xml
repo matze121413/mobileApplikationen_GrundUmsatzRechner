@@ -41,7 +41,7 @@
     <string name="titleHelp">Hilfe</string>
     <string name="titleSaved">Gespeicherte Werte</string>
 
-    //Textdefinitionen für das help_menu
+
 
     //Textdefinition für Hilfe-Seite
     <string name="outlineHelp">Hilfe:</string>
@@ -70,4 +70,17 @@
 
     //Detailansicht
     <string name="id">ID</string>
+
+    //Toast-Texte AktivitaetActivity
+    <string name="vervollstaendigeFelder">Alle Felder müssen mit Zahlen belegt werden!</string>
+    <string name="summeMeassage">lle Werte zusammen müssen 24h ergeben!</string>
+
+    //Toast-Texte ErgebnisAktivity
+    <string name="nameEingeben">Geben Sie bitte Ihren Namen ein!</string>
+    <string name="datenHinzugefuegt">Daten erfolgreich hinzugefügt</string>
+    <string name="datenNichtHinzugefuegt">Daten konnten nicht hinzugefügt werden</string>
+
+    //Toast-Texte Main-Aktivity
+    <string name="nurZahlen">Bitte nur Zahlen eingeben!</string>
+    <string name="Wertebereich">Die eingegebenen Werte liegen außerhalb des Wertebereiches!</string>
 </resources>

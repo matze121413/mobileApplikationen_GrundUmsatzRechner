@@ -122,9 +122,9 @@ public class AktivitaetActivity extends AppCompatActivity {
             db.berechneKalorienverbrauch();
             startActivity(new Intent(this, ErgebnisActivity.class));
         }catch(NumberFormatException nfe){
-            Toast.makeText(this, "Alle Felder müssen mit Zahlen belegt werden!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.vervollstaendigeFelder), Toast.LENGTH_LONG).show();
         }catch(WertebereichException wbe){
-            Toast.makeText(this, "Alle Werte zusammen müssen 24h ergeben!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.summeMeassage), Toast.LENGTH_LONG).show();
         }
 
     }
