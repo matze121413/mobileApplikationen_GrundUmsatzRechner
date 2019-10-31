@@ -67,4 +67,7 @@
     <string name="textViewName">Name:</string>
     <string name="Einfuegen">einfügen</string>
     <string name="Loeschen">Löschen</string>
+
+    //Detailansicht
+    <string name="id">ID</string>
 </resources>

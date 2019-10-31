@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class ErgebnisActivity extends AppCompatActivity {
     public static DatenBerechnung db ;
     DbHelper dbHelper;
+    TextView eingabeFeld;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class ErgebnisActivity extends AppCompatActivity {
         kalorienVerbrauchKcal.setText(((int) db.getKalorienVerbrauch()) + " kcal");
         kalorienVerbrauchKj.setText(((int) (4.186 * db.getKalorienVerbrauch())) + " kj");
 
+        eingabeFeld = (TextView) findViewById(R.id.editTextEingabeName);
+
     }
     public void neuStarten(View v){
         MainActivity.db=null;
@@ -39,36 +42,42 @@ public class ErgebnisActivity extends AppCompatActivity {
         startActivity(intent);
     }
     //int alter, int groesse, double gewicht, double schlaf, double sitzend, double stehend, double kaumAktiv, double sport, int geschlecht
-    public void speichern(View v){
-        int ges= 0;
-        if(!db.getMaennlich())
-            ges=1;
-        boolean hinzugefuegt = dbHelper.addData("Hans", (int)db.getKalorienVerbrauch(), (int) db.getGrundUmsatz(), db.getAlter(), db.getGroesse(), db.getGewicht(), db.getPalSchlaf(), db.getPalSitzend(), db.getPalStehend(), db.getPalKaumAktiv(), db.getPalSport(), ges);
-        if(hinzugefuegt){
-            Toast.makeText(this, "Daten erfolgreich hinzugefügt", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
-            startActivity(intent);
-        }else
-            Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
+    public void speichern(View v) {
+        int ges = 0;
+        String name = eingabeFeld.getText().toString();
+        if (name.equals("")) {
+            Toast.makeText(this, "Geben Sie bitte Ihren Namen ein!", Toast.LENGTH_LONG).show();
+        } else {
+            if (!db.getMaennlich())
+                ges = 1;
+            boolean hinzugefuegt = dbHelper.addData(name, (int) db.getKalorienVerbrauch(), (int) db.getGrundUmsatz(), db.getAlter(), db.getGroesse(), db.getGewicht(), db.getPalSchlaf(), db.getPalSitzend(), db.getPalStehend(), db.getPalKaumAktiv(), db.getPalSport(), ges);
+            if (hinzugefuegt) {
+                Toast.makeText(this, "Daten erfolgreich hinzugefügt", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
+                startActivity(intent);
+            } else
+                Toast.makeText(this, "Daten konnten nicht hinzugefügt werden", Toast.LENGTH_LONG).show();
+        }
+        }
 
-    }
+        /* Menu-Icon wird in toolbar angezeigt */
+        public boolean onCreateOptionsMenu (Menu menu){
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.toolbar_menu, menu);
+            return true;
+        }//Ende der onCreateOptionMenu-Methode
 
-    /* Menu-Icon wird in toolbar angezeigt */
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu, menu);
-        return true;
-    }//Ende der onCreateOptionMenu-Methode
+        public boolean onOptionsItemSelected (MenuItem item){
+            int id = item.getItemId();
+            if (id == android.R.id.home)
+                startActivity(new Intent(this, AktivitaetActivity.class));
+            if (id == R.id.help)
+                startActivity(new Intent(this, HilfeActivity.class));
+            if (id == R.id.daten) {
+                Intent dateIntent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
+                startActivity(dateIntent);
+            }
+            return super.onOptionsItemSelected(item);
+        }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-        if(id== android.R.id.home)
-            startActivity(new Intent(this, AktivitaetActivity.class));
-        if(id== R.id.help)
-            startActivity(new Intent(this, HilfeActivity.class));
-        if(id== R.id.daten){
-        Intent dateIntent = new Intent(ErgebnisActivity.this,ListeDatenbank.class);
-        startActivity(dateIntent);}
-        return super.onOptionsItemSelected(item);
-    }
 }

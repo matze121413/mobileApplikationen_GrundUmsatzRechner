@@ -51,6 +51,202 @@
                 android:layout_marginTop="40dp">
 
                 <TextView
+                    android:id="@+id/db_text_geschlecht"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/gender"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/db_erg_geschlecht"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_alter"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewAlter"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/db_erg_alter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_groesse"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewGroesse"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_groesse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_gewicht"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewGewicht"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_gewicht"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_schlaf"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewSchlaf"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_schlaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_sitzend"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewSitzendLiegend"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_sitzend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_stehend"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewSitzendKaumAktiv"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_stehend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_kaumAktiv"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewSitzendKaumAktiv"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_kaumAktiv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_sport"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewAnstrengendeArbeitSport"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/db_erg_sport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
                     android:id="@+id/db_text_grundumsatz"
                     android:layout_width="186dp"
                     android:layout_height="match_parent"
@@ -66,9 +262,28 @@
                     android:ems="10"
                     android:textSize="18sp" />
 
-
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/db_text_kalorienverbrauch"
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/textViewDurchschnittlKalorienverbrauch"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/db_erg_kalorienverbrauch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:textSize="18sp"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
