@@ -2,7 +2,6 @@ package matze.schuwe.grundumsatzrechner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,18 +16,18 @@ import android.widget.Toast;
 
 public class AktivitaetActivity extends AppCompatActivity {
     public static DatenBerechnung db ;
-     static  EditText schlaf, sitzend, kaumAktiv, stehend, sport;
+      private EditText schlaf, sitzend, kaumAktiv, stehend, sport;
      public AktivitaetActivity(){
 
     }
     class TextSucher implements TextWatcher{
           EditText schlaf, sitzend, kaumAktiv, stehend, sport;
-          public TextSucher(){
-              schlaf=(EditText) findViewById(R.id.schlaf);
-              sitzend=(EditText) findViewById(R.id.sitzend);
-              kaumAktiv=(EditText) findViewById(R.id.kaumAktiv);
-              stehend=(EditText) findViewById(R.id.stehend);
-              sport=(EditText) findViewById(R.id.sport);
+          private TextSucher(){
+              schlaf= findViewById(R.id.schlaf);
+              sitzend= findViewById(R.id.sitzend);
+              kaumAktiv= findViewById(R.id.kaumAktiv);
+              stehend= findViewById(R.id.stehend);
+              sport= findViewById(R.id.sport);
           }
 
 
@@ -39,7 +38,7 @@ public class AktivitaetActivity extends AppCompatActivity {
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            double summe = 0;
+            double summe;
             double sitzendWert =0;
             double schlafWert= 0;
             double kaumAktivWert = 0;
@@ -56,20 +55,24 @@ public class AktivitaetActivity extends AppCompatActivity {
             if(!sport.getText().toString().equals(""))
                 sportWert = Double.parseDouble(sport.getText().toString());
             summe= sitzendWert+ schlafWert + kaumAktivWert+ stehendWert+ sportWert;
-            TextView stunden=(TextView) findViewById(R.id.stundenInsgesamt);
+            TextView stunden= findViewById(R.id.stundenInsgesamt);
             stunden.setText(""+summe);
         }
     }    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aktivitaet);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-         schlaf=(EditText) findViewById(R.id.schlaf);
-         sitzend=(EditText) findViewById(R.id.sitzend);
-         kaumAktiv=(EditText) findViewById(R.id.kaumAktiv);
-         stehend=(EditText) findViewById(R.id.stehend);
-         sport=(EditText) findViewById(R.id.sport);
+        try {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch(NullPointerException npe){
+            Toast.makeText(this, "Es ist e", Toast.LENGTH_LONG).show();
+        }
+         schlaf= findViewById(R.id.schlaf);
+         sitzend= findViewById(R.id.sitzend);
+         kaumAktiv= findViewById(R.id.kaumAktiv);
+         stehend= findViewById(R.id.stehend);
+         sport= findViewById(R.id.sport);
         if(db==null){
             db=MainActivity.db;
         }else{

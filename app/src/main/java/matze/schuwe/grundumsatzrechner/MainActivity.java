@@ -2,7 +2,7 @@ package matze.schuwe.grundumsatzrechner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void felderEinsetzen(){
-        EditText gewicht =(EditText) findViewById(R.id.gewicht);
-        EditText groesse =(EditText) findViewById(R.id.groesse);
-        EditText alter =(EditText) findViewById(R.id.alter);
+        EditText gewicht = findViewById(R.id.gewicht);
+        EditText groesse = findViewById(R.id.groesse);
+        EditText alter = findViewById(R.id.alter);
         gewicht.setText(db.getGewicht()+"");
         groesse.setText(db.getGroesse()+"");
         alter.setText(db.getAlter()+"");
@@ -69,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void berechnen(View v){
-        EditText textGewicht= (EditText) findViewById(R.id.gewicht);
-        EditText textGroesse= (EditText) findViewById(R.id.groesse);
-        EditText textAlter =(EditText) findViewById(R.id.alter);
-        RadioButton geschlecht = (RadioButton) findViewById(R.id.radio_maennlich);
+        EditText textGewicht= findViewById(R.id.gewicht);
+        EditText textGroesse=  findViewById(R.id.groesse);
+        EditText textAlter =findViewById(R.id.alter);
+        RadioButton geschlecht =  findViewById(R.id.radio_maennlich);
 
 
         try{
