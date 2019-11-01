@@ -66,7 +66,7 @@ public class AktivitaetActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }catch(NullPointerException npe){
-            Toast.makeText(this, "Es ist e", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Es ist ein Fehler aufgetreten!", Toast.LENGTH_LONG).show();
         }
          schlaf= findViewById(R.id.schlaf);
          sitzend= findViewById(R.id.sitzend);

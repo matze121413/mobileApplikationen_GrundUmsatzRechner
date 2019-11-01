@@ -19,20 +19,24 @@ public class ErgebnisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ergebnis);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        try {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch(NullPointerException npe){
+            Toast.makeText(this, "Es ist ein Fehler aufgetreten!", Toast.LENGTH_LONG).show();
+        }
         db = AktivitaetActivity.db;
         dbHelper= new DbHelper(this);
-        TextView grundUmsatzKcal = (TextView) findViewById(R.id.grundUmsatz_kcal);
-        TextView grundUmsatzKj = (TextView) findViewById(R.id.grundUmsatz_kj);
-        TextView kalorienVerbrauchKcal = (TextView) findViewById(R.id.kalorienVerbrauch_kcal);
-        TextView kalorienVerbrauchKj = (TextView) findViewById(R.id.kalorienVerbrauch_kj);
+        TextView grundUmsatzKcal =  findViewById(R.id.grundUmsatz_kcal);
+        TextView grundUmsatzKj =  findViewById(R.id.grundUmsatz_kj);
+        TextView kalorienVerbrauchKcal =  findViewById(R.id.kalorienVerbrauch_kcal);
+        TextView kalorienVerbrauchKj =  findViewById(R.id.kalorienVerbrauch_kj);
         grundUmsatzKcal.setText(((int) db.getGrundUmsatz()) + " kcal");
         grundUmsatzKj.setText(((int) (4.186 * db.getGrundUmsatz())) + " kj");
         kalorienVerbrauchKcal.setText(((int) db.getKalorienVerbrauch()) + " kcal");
         kalorienVerbrauchKj.setText(((int) (4.186 * db.getKalorienVerbrauch())) + " kj");
 
-        eingabeFeld = (TextView) findViewById(R.id.editTextEingabeName);
+        eingabeFeld =  findViewById(R.id.editTextEingabeName);
 
     }
     public void neuStarten(View v){
