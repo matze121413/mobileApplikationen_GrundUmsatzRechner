@@ -62,11 +62,12 @@ public class ListeDatenbank extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if(id== android.R.id.home)
-            startActivity(new Intent(this, AktivitaetActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         if(id== R.id.help)
             startActivity(new Intent(this, HilfeActivity.class));
-        if(id== R.id.daten)
-            startActivity(new Intent(this, ListeDatenbank.class));
+        if(id== R.id.berechnung)
+            startActivity(new Intent(this, MainActivity.class));
+
         return super.onOptionsItemSelected(item);
     }
     public void listeFuellen(){

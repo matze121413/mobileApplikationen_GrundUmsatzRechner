@@ -179,8 +179,8 @@
                     android:id="@+id/text_sport"
                     android:layout_width="97dp"
                     android:layout_height="match_parent"
-                    android:text="@string/textViewAnstrengendeArbeitSport"
-                    android:textSize="18sp"
+                    android:text="@string/textViewAnstrengendeArbeitSport2"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <EditText

@@ -20,6 +20,12 @@
             android:icon="@drawable/ic_save"
             app:showAsAction="never"/>
 
+        <item
+            android:id="@+id/berechnung"
+            android:title="Zur Berechnung"
+            android:icon="@drawable/ic_calc"
+            app:showAsAction="never"/>
+
 </menu>
 </item>
 </menu>

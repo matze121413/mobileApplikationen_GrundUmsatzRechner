@@ -81,6 +81,10 @@ public class ErgebnisActivity extends AppCompatActivity {
                 Intent dateIntent = new Intent(ErgebnisActivity.this, ListeDatenbank.class);
                 startActivity(dateIntent);
             }
+            if (id == R.id.berechnung) {
+                Intent dateIntent = new Intent(ErgebnisActivity.this, MainActivity.class);
+                startActivity(dateIntent);
+            }
             return super.onOptionsItemSelected(item);
         }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,7 @@ public class HilfeActivity  extends AppCompatActivity {
     /* Menu-Icon wird in toolbar angezeigt */
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.helppage_menu, menu);
+        inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
     }//Ende der onCreateOptionMenu-Methode
 
@@ -28,7 +29,7 @@ public class HilfeActivity  extends AppCompatActivity {
                 Intent helpIntent = new Intent(HilfeActivity.this,MainActivity.class);
                 startActivity(helpIntent);
                 return true;
-            case R.id.datenHelp:
+            case R.id.daten:
                 Intent datenIntent = new Intent(HilfeActivity.this,ListeDatenbank.class);
                 startActivity(datenIntent);
             default:

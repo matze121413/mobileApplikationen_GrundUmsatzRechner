@@ -61,6 +61,9 @@ public class DetailansichtActivity extends AppCompatActivity {
             startActivity(new Intent(this, HilfeActivity.class));
         if(id== R.id.daten)
             startActivity(new Intent(this, ListeDatenbank.class));
+        if(id== R.id.berechnung)
+            startActivity(new Intent(this, MainActivity.class));
+
         return super.onOptionsItemSelected(item);
     }
     public void felderFuellen(){
