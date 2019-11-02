@@ -9,7 +9,7 @@
     <string name="rbWeiblich">weiblich</string>
     <string name="btnWeiter">weiter</string>
     <string name="textViewGewicht">Gewicht:</string>
-    <string name="textViewGroesse">Grösse:</string>
+    <string name="textViewGroesse">Größe:</string>
     <string name="textViewAlter">Alter:</string>
     <string name="textViewEinheitKg">in kg</string>
     <string name="textViewEinheitCm">in cm</string>
