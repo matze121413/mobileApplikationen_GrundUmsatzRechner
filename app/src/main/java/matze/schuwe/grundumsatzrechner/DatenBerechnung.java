@@ -2,7 +2,7 @@ package matze.schuwe.grundumsatzrechner;
 
 import android.widget.TextView;
 import android.widget.Toast;
-
+// speichert alle wichtigen Daten in Objekten dieser Klasse und liefert Methoden zur Berechnung des Grundumsatzes und des Kalorienverbrauches
 public class DatenBerechnung {
     private boolean maennlich;
     private  int groesse, alter;
@@ -13,7 +13,7 @@ public class DatenBerechnung {
     private final double palFaktorSitzend= 1.2;
     private final double palFaktorStehend= 1.85;
     private final double palFaktorSport= 2.2;
-
+    //getter- und setter- Methoden für die Objekte
     public boolean getMaennlich(){
         return maennlich;
     }
@@ -76,13 +76,6 @@ public class DatenBerechnung {
     public void setMaennlich(boolean maen){
         maennlich = maen;
     }
-    public void berechneGrundumsatz(){
-        if(maennlich){
-            grundUmsatz= 66.47+((13.7*gewicht)+(5*groesse))-(6.8*alter);
-        }else{
-            grundUmsatz= 655+(9.6*gewicht)+(1.8*groesse)-(4.7*alter);
-        }
-    }
     public void setPalWerte(double schlaf, double sitzend, double kaumAktiv, double stehend, double sport) throws WertebereichException{
         if(schlaf + sitzend+ stehend + sport + kaumAktiv!= 24)
             throw new WertebereichException();
@@ -92,6 +85,16 @@ public class DatenBerechnung {
         palSport = sport;
         palKaumAktiv=kaumAktiv;
     }
+    //Methode zur Berechnung des Grundumsatzes
+    public void berechneGrundumsatz(){
+        if(maennlich){
+            grundUmsatz= 66.47+((13.7*gewicht)+(5*groesse))-(6.8*alter);
+        }else{
+            grundUmsatz= 655+(9.6*gewicht)+(1.8*groesse)-(4.7*alter);
+        }
+    }
+
+    //Methode zur Berechnung des Kaloroenverbrauches
     public void berechneKalorienverbrauch() {
         palDurchschnitt = (palSchlaf*palFaktorSchlaf+palSitzend*palFaktorSitzend+ palKaumAktiv*palFaktorKaumAktiv+palStehend*palFaktorStehend+palSport*palFaktorSport)/24;
         kalorienVerbrauch= palDurchschnitt*grundUmsatz;

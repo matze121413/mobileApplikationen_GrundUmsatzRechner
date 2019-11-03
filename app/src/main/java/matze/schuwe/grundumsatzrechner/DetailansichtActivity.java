@@ -23,8 +23,12 @@ public class DetailansichtActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailansicht);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        try {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch(NullPointerException npe){
+            Toast.makeText(this, "Es ist ein Fehler aufgetreten!", Toast.LENGTH_LONG).show();
+        }
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
          id = b.getInt("id");
@@ -66,42 +70,45 @@ public class DetailansichtActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //Methode zum Füllen aller Felder des ausgewählten Datensatzes
     public void felderFuellen(){
-        nameFeld = (TextView) findViewById(R.id.db_erg_name);
+        nameFeld =  findViewById(R.id.db_erg_name);
         nameFeld.setText(name);
-        grundumsatzFeld = (TextView) findViewById(R.id.db_erg_grundumsatz);
+        grundumsatzFeld = findViewById(R.id.db_erg_grundumsatz);
         grundumsatzFeld.setText(grundumsatz+"");
-        groesseFeld = (TextView) findViewById(R.id.db_erg_groesse);
+        groesseFeld = findViewById(R.id.db_erg_groesse);
         groesseFeld.setText(groesse+"");
-        geschlechtFeld = (TextView) findViewById(R.id.db_erg_geschlecht);
+        geschlechtFeld = findViewById(R.id.db_erg_geschlecht);
         if(geschlecht==0){
             geschlechtFeld.setText("männlich");
         }else{
             geschlechtFeld.setText("weiblich");
         }
-        gewichtFeld = (TextView) findViewById(R.id.db_erg_gewicht);
+        gewichtFeld =  findViewById(R.id.db_erg_gewicht);
         gewichtFeld.setText(gewicht+"");
-        alterFeld = (TextView) findViewById(R.id.db_erg_alter);
+        alterFeld =  findViewById(R.id.db_erg_alter);
         alterFeld.setText(alter+"");
-        schlafFeld = (TextView) findViewById(R.id.db_erg_schlaf);
+        schlafFeld =  findViewById(R.id.db_erg_schlaf);
         schlafFeld.setText(schlaf+"");
-        sitzenFeld = (TextView) findViewById(R.id.db_erg_sitzend);
+        sitzenFeld =  findViewById(R.id.db_erg_sitzend);
         sitzenFeld.setText(sitzend+"");
-        kaumAktivFeld = (TextView) findViewById(R.id.db_erg_kaumAktiv);
+        kaumAktivFeld = findViewById(R.id.db_erg_kaumAktiv);
         kaumAktivFeld.setText(kaumAktiv+"");
-        stehendFeld = (TextView) findViewById(R.id.db_erg_stehend);
+        stehendFeld =  findViewById(R.id.db_erg_stehend);
         stehendFeld.setText(stehend+"");
-        sportFeld = (TextView) findViewById(R.id.db_erg_sport);
+        sportFeld = findViewById(R.id.db_erg_sport);
         sportFeld.setText(sport+"");
-        kalorienverbrauchFeld = (TextView) findViewById(R.id.db_erg_kalorienverbrauch);
+        kalorienverbrauchFeld = findViewById(R.id.db_erg_kalorienverbrauch);
         kalorienverbrauchFeld.setText(kalorienverbrauch+"");
 
     }
+    //Methode zum Löschen des ausgewählten Datensatzes. Wird aufgerufen, sobald der Löschen-Button gedrückt wird.
     public void datensatzLoeschen(View v){
         dbHelper.deleteRow(id);
         Intent intent = new Intent(DetailansichtActivity.this, ListeDatenbank.class);
         startActivity(intent);
     }
+    // Methode zum Einsetzes des aktuellen Datensatzes in die Activities der Berechnung. Danach wird durch einen Intent die gefüllte MainActivity angezeigt. 
     public void werteEinfuegen(View v){
         DatenBerechnung datenBerechnung = new DatenBerechnung();
         try {

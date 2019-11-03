@@ -21,16 +21,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-
-
-
-
         if(db==null){
             db=new DatenBerechnung();
         }else{
             felderEinsetzen();
         }
-
     }// Ende onCreate-Methode
 
 
@@ -56,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         }//Ende switch
     }//Ende onOptionsItemSelected
 
-
+// falls ein Datensatz eingefügt wird, werden hier die Felder dafür gefüllt
     public void felderEinsetzen(){
         EditText gewicht = findViewById(R.id.gewicht);
         EditText groesse = findViewById(R.id.groesse);
@@ -66,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         alter.setText(db.getAlter()+"");
 
     }
-
+    // durch Buttondruck werden Werte in einem Objekt von Datenberechnung gespeichert. Daraufhin wird durch einen Intent die AktivitaetsActivity aufgerufen.
     public void berechnen(View v){
         EditText textGewicht= findViewById(R.id.gewicht);
         EditText textGroesse=  findViewById(R.id.groesse);
@@ -80,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
             db.setAlter(Integer.parseInt(textAlter.getText().toString()));
             db.setGewicht(Double.parseDouble(textGewicht.getText().toString()));
             db.berechneGrundumsatz();
-           // Intent intent= new Intent(this, AktivitaetActivity.class);
             startActivity(new Intent(this, AktivitaetActivity.class));
         }catch (NumberFormatException nfe){
             Toast.makeText(this,  getString(R.string.nurZahlen), Toast.LENGTH_LONG).show();

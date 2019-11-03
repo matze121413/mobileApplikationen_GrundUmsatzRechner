@@ -20,6 +20,7 @@ public class AktivitaetActivity extends AppCompatActivity {
      public AktivitaetActivity(){
 
     }
+    //Dient zur Untersuchung der Eingabefelder auf Änderung, um die Gesamtanzahl ausgeben zu können.
     class TextSucher implements TextWatcher{
           EditText schlaf, sitzend, kaumAktiv, stehend, sport;
           private TextSucher(){
@@ -36,7 +37,7 @@ public class AktivitaetActivity extends AppCompatActivity {
         public void beforeTextChanged(CharSequence s, int start,
                                       int count, int after) {
         }
-
+        //Methode wird aufgerufen falls sich der Text in einem Eingabefeld ändert.
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             double summe;
             double sitzendWert =0;
@@ -87,7 +88,7 @@ public class AktivitaetActivity extends AppCompatActivity {
         sport.addTextChangedListener(tw);
     }
 
-
+    // falls ein Datensatz eingefügt wird, werden hier die Felder dafür gefüllt
     public void felderEinsetzen(){
         schlaf.setText(db.getPalSchlaf()+"");
         sitzend.setText(db.getPalSitzend()+"");
@@ -116,6 +117,7 @@ public class AktivitaetActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
         return super.onOptionsItemSelected(item);
     }
+    // bei Buttondruck werden Werte in Objekt von DatenBerechnung gespeichert und durch Einen Intent wird die ErgebnisActivity aufgerufen
         public void berechnen(View v){
         try {
             double schlafendWert = Double.parseDouble(schlaf.getText().toString());

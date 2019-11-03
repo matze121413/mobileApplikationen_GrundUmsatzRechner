@@ -39,6 +39,7 @@ public class ErgebnisActivity extends AppCompatActivity {
         eingabeFeld =  findViewById(R.id.editTextEingabeName);
 
     }
+    //durch Buttondruck auf Neu Starten werden die vorhandenen Objekte von DatenBerechnung gelöscht und somit die Felder leer gemacht.
     public void neuStarten(View v){
         MainActivity.db=null;
         AktivitaetActivity.db=null;
@@ -71,6 +72,7 @@ public class ErgebnisActivity extends AppCompatActivity {
             return true;
         }//Ende der onCreateOptionMenu-Methode
 
+        // zur Menü- und Zurücktasten Steuerung
         public boolean onOptionsItemSelected (MenuItem item){
             int id = item.getItemId();
             if (id == android.R.id.home)

@@ -31,7 +31,7 @@ public class DbHelper extends SQLiteOpenHelper{
         public static final String COLUMN_KAUMAKTIV = "kaumAktiv";
         public static final String COLUMN_SPORT = "sport";
      public static final String COLUMN_GESCHLECHT = "geschlecht";
-
+    // Methode zum Erstellen der Tabelle
     public static final String SQL_CREATE =
                 "CREATE TABLE " + TABLE_KALORIENVERBRAUCH +
                         "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -48,7 +48,7 @@ public class DbHelper extends SQLiteOpenHelper{
                         COLUMN_KALORIENVERBRAUCH + " INTEGER NOT NULL, " +
                         COLUMN_GRUNDUMSATZ + " INTEGER NOT NULL);";
 
-
+        // Konstruktor zum Erstelln einer Instanz von DBHelper
         public DbHelper(Context context) {
             super(context, DB_NAME, null, DB_VERSION);
             Log.d(LOG_TAG, "DbHelper hat die Datenbank: " + getDatabaseName() + " erzeugt.");
@@ -70,6 +70,7 @@ public class DbHelper extends SQLiteOpenHelper{
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_KALORIENVERBRAUCH);
             onCreate(db);
         }
+        // Methode, um einen neuen Datensatz in die Tabelle einzutragen
         public boolean addData(String name, int kalorienVerbrauch, int grundUmsatz, int alter, int groesse, double gewicht, double schlaf, double sitzend, double stehend, double kaumAktiv, double sport, int geschlecht){
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues =  new ContentValues();
@@ -89,24 +90,28 @@ public class DbHelper extends SQLiteOpenHelper{
             long result = db.insert(TABLE_KALORIENVERBRAUCH, null, contentValues);
             return result != -1;
         }
+        // Methode zum Lesen aller Daten in der Tabelle
         public Cursor getData(){
             SQLiteDatabase db= getWritableDatabase();
             String query = "SELECT * FROM "+ TABLE_KALORIENVERBRAUCH;
             Cursor data = db.rawQuery(query, null );
             return data;
         }
+        // Methode, um die passende ID zu ermitteln, wenn man auf eine Zeile in der Tabelle klickt
         public Cursor getItemId(String name, int grundumsatz, int kalorienverbrauch){
             SQLiteDatabase db= getWritableDatabase();
             String query ="SELECT "+ COLUMN_ID + " FROM "+ TABLE_KALORIENVERBRAUCH+ " WHERE "+ COLUMN_GRUNDUMSATZ+ " = "+ grundumsatz + " AND "+ COLUMN_NAME+ " = '"+ name + "' AND "+ COLUMN_KALORIENVERBRAUCH+ " = "+ kalorienverbrauch;
             Cursor data = db.rawQuery(query, null );
             return data;
         }
+        // Methode, welche die gesamte Zeile anhand der ID zurückliefert
         public Cursor getRow(int id){
             SQLiteDatabase db= getWritableDatabase();
             String query ="SELECT * FROM "+ TABLE_KALORIENVERBRAUCH+ " WHERE "+ COLUMN_ID + " = "+ id;
             Cursor data = db.rawQuery(query, null );
             return data;
         }
+        // Methode zum Löschen einer Zeile/ eines Datensatzes anhand der ID
         public void deleteRow(int id){
             SQLiteDatabase db= getWritableDatabase();
             String query = "DELETE FROM "+ TABLE_KALORIENVERBRAUCH +" WHERE "+ COLUMN_ID + " = "+ id+";";

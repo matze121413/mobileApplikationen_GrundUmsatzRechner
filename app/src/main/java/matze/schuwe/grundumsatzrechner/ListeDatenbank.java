@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import android.widget.ListView;
+
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,18 +20,20 @@ import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 public class ListeDatenbank extends AppCompatActivity {
-    private static final String TAG = "ListeDatenbank";
     DbHelper dbHelper;
-    private ListView liste;
     TableView<String[]> tabelle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        try {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch(NullPointerException npe){
+            Toast.makeText(this, "Es ist ein Fehler aufgetreten!", Toast.LENGTH_LONG).show();
+        }
         setContentView(R.layout.activity_liste_datenbank);
-        tabelle = (TableView<String[]>) findViewById(R.id.tabelleDatensaetze);
+        tabelle =  findViewById(R.id.tabelleDatensaetze);
         dbHelper = new DbHelper(this);
 
         listeFuellen();
@@ -54,6 +56,7 @@ public class ListeDatenbank extends AppCompatActivity {
             }
         });
     }
+    // zur Menü- und Zurücktasten Steuerung
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar_menu, menu);
@@ -70,6 +73,7 @@ public class ListeDatenbank extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //Methode, zum Füllen der Tabelle, mit allen in der Datensätzen (aber nicht alle Felder!)
     public void listeFuellen(){
         String[] spalten ={"Name", "Grundumsatz", "Kalorienverbrauch"};
         tabelle.setHeaderAdapter(new SimpleTableHeaderAdapter(this, spalten));
@@ -84,7 +88,5 @@ public class ListeDatenbank extends AppCompatActivity {
             listeDaten.add(anzeigen);
         }
         tabelle.setDataAdapter(new SimpleTableDataAdapter( ListeDatenbank.this, listeDaten));
-        //ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listeDaten);
-        //liste.setAdapter(adapter);
     }
 }
