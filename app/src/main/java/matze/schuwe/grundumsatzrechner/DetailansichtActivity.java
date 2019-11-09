@@ -108,7 +108,7 @@ public class DetailansichtActivity extends AppCompatActivity {
         Intent intent = new Intent(DetailansichtActivity.this, ListeDatenbank.class);
         startActivity(intent);
     }
-    // Methode zum Einsetzes des aktuellen Datensatzes in die Activities der Berechnung. Danach wird durch einen Intent die gefüllte MainActivity angezeigt. 
+    // Methode zum Einsetzes des aktuellen Datensatzes in die Activities der Berechnung. Danach wird durch einen Intent die gefüllte MainActivity angezeigt.
     public void werteEinfuegen(View v){
         DatenBerechnung datenBerechnung = new DatenBerechnung();
         try {
